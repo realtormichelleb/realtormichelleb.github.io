@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michelle Barrios Realtor | michellebarriosrealtor.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --gold-dark: #9A7840;
+    --dark: #1C1B18;
+    --dark-soft: #2C2A24;
+    --cream: #F7F3EC;
+    --cream-dark: #EDE6D6;
+    --white: #FFFFFF;
+    --text: #2C2A24;
+    --text-muted: #7A7060;
+    --section-pad: 90px 6vw;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 72px;
+    background: rgba(28,27,24,0.94);
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--gold); letter-spacing: 0.04em; text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 12px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--dark); padding: 9px 22px; border-radius: 2px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  .hero { min-height: 100vh; background: var(--dark); display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 120px 6vw 80px; position: relative; z-index: 2; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 5.5vw, 70px); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
+  .hero-title em { color: var(--gold); font-style: italic; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 420px; margin-bottom: 48px; font-weight: 300; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--dark); padding: 14px 32px; border-radius: 2px; text-decoration: none; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: background 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { border: 1px solid rgba(201,169,110,0.4); color: var(--gold); padding: 14px 32px; border-radius: 2px; text-decoration: none; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: border-color 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--gold); }
+  .hero-stats { display: flex; gap: 40px; margin-top: 64px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 40px; }
+  .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--gold); font-weight: 300; display: block; }
+  .hero-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; display: block; }
+  .hero-right { position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #272420 0%, #1a1812 60%, #22201a 100%); }
+  .hero-pattern { position: absolute; inset: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%); background-size: 22px 22px; }
+  .hero-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .agent-card { background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; padding: 48px 40px; text-align: center; max-width: 320px; width: 90%; animation: fadeUp 1s ease 0.3s both; }
+  .agent-avatar { width: 110px; height: 110px; border-radius: 50%; border: 2px solid var(--gold); background: linear-gradient(135deg, #3a3428, #252219); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--gold); font-weight: 300; }
+  .agent-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--white); font-weight: 400; margin-bottom: 6px; }
+  .agent-title-text { font-size: 11px; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+  .agent-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .badge { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(201,169,110,0.25); color: rgba(255,255,255,0.4); }
+
+  @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+  .hero-left > * { animation: fadeUp 0.8s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+
+  .about { padding: var(--section-pad); background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; line-height: 1.2; margin-bottom: 24px; }
+  .section-title em { color: var(--gold-dark); font-style: italic; }
+  .about-text { font-size: 15px; color: var(--text-muted); line-height: 1.9; margin-bottom: 16px; font-weight: 300; }
+  .signature { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-style: italic; color: var(--gold-dark); margin-top: 32px; }
+  .feats { display: flex; flex-direction: column; gap: 16px; }
+  .feat { background: var(--white); border-left: 3px solid var(--gold); padding: 22px 26px; border-radius: 0 4px 4px 0; }
+  .feat-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .feat-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+  .services { padding: var(--section-pad); background: var(--dark); }
+  .services-header { text-align: center; margin-bottom: 56px; }
+  .services-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; color: var(--white); margin-bottom: 14px; }
+  .services-sub { font-size: 14px; color: rgba(255,255,255,0.35); max-width: 460px; margin: 0 auto; line-height: 1.85; font-weight: 300; }
+  .srv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2px; }
+  .srv { background: rgba(255,255,255,0.025); padding: 40px 30px; border: 1px solid rgba(201,169,110,0.07); transition: background 0.3s, border-color 0.3s; }
+  .srv:hover { background: rgba(201,169,110,0.05); border-color: rgba(201,169,110,0.22); }
+  .srv-icon { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; color: var(--gold); }
+  .srv-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .srv-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--white); font-weight: 400; margin-bottom: 10px; }
+  .srv-text { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.8; font-weight: 300; }
+
+  .properties { padding: var(--section-pad); background: var(--white); }
+  .prop-hdr { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; }
+  .view-all { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); text-decoration: none; border-bottom: 1px solid var(--gold-light); padding-bottom: 2px; }
+  .prop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; }
+  .prop-card { border: 1px solid #EDEAE4; border-radius: 4px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
+  .prop-card:hover { transform: translateY(-5px); }
+  .prop-img { height: 210px; position: relative; display: flex; align-items: flex-end; }
+  .prop-img-bg { position: absolute; inset: 0; }
+  .prop-tag { position: absolute; top: 14px; left: 14px; background: var(--gold); color: var(--dark); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; font-weight: 500; z-index: 1; }
+  .prop-price { position: relative; z-index: 1; padding: 16px 20px; font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--white); font-weight: 300; background: linear-gradient(transparent, rgba(0,0,0,0.72)); width: 100%; }
+  .prop-body { padding: 20px; }
+  .prop-name { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .prop-loc { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+  .prop-specs { display: flex; gap: 18px; }
+  .prop-spec { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+  .prop-spec svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .calculator { padding: var(--section-pad); background: var(--cream); }
+  .calc-hdr { text-align: center; margin-bottom: 52px; }
+  .calc-sub { font-size: 14px; color: var(--text-muted); font-weight: 300; }
+  .calc-wrap { max-width: 880px; margin: 0 auto; }
+  .calc-box { background: var(--white); border: 1px solid #DDD6C8; border-radius: 4px; overflow: hidden; }
+  .calc-inputs { padding: 40px 44px; border-bottom: 1px solid #E8E0D0; }
+  .c-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 26px; }
+  .c-field { display: flex; flex-direction: column; gap: 8px; }
+  .c-label { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-muted); display: flex; justify-content: space-between; }
+  .c-val { color: var(--gold-dark); font-weight: 500; }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 3px; background: #DDD6C8; border-radius: 2px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); border: 2px solid var(--white); box-shadow: 0 0 0 1px var(--gold); cursor: pointer; }
+  input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--gold); border: 2px solid var(--white); cursor: pointer; }
+  .calc-output { background: var(--dark); padding: 40px 44px; }
+  .output-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin-bottom: 36px; }
+  .out-item { text-align: center; }
+  .out-num { font-family: 'Cormorant Garamond', serif; font-size: 34px; color: var(--gold); font-weight: 300; display: block; margin-bottom: 5px; }
+  .out-lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+  .out-detail { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; }
+  .out-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .out-row:last-child { border-bottom: none; }
+  .out-row-lbl { font-size: 13px; color: rgba(255,255,255,0.4); }
+  .out-row-val { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 500; }
+  .out-row.ttl .out-row-lbl { color: var(--gold); font-size: 14px; }
+  .out-row.ttl .out-row-val { color: var(--gold); font-size: 17px; }
+  .bar-track { height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; margin-top: 20px; display: flex; overflow: hidden; }
+  .bar-seg { transition: width 0.4s ease; }
+  .bp { background: var(--gold); }
+  .bi { background: rgba(201,169,110,0.38); }
+  .bt { background: rgba(255,255,255,0.13); }
+  .bar-legend { display: flex; gap: 18px; margin-top: 10px; flex-wrap: wrap; }
+  .leg { display: flex; align-items: center; gap: 7px; font-size: 11px; color: rgba(255,255,255,0.3); }
+  .leg-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  .testimonials { padding: var(--section-pad); background: var(--white); }
+  .tst-hdr { text-align: center; margin-bottom: 52px; }
+  .tst-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+  .tst-card { background: var(--cream); padding: 34px 30px; border-radius: 4px; border: 1px solid #EDE6D6; }
+  .tst-stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; letter-spacing: 3px; }
+  .tst-quote { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; font-weight: 300; line-height: 1.65; color: var(--text); margin-bottom: 22px; }
+  .tst-author { font-size: 13px; font-weight: 500; }
+  .tst-loc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  .contact { padding: var(--section-pad); background: var(--dark-soft); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .contact-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; color: var(--white); margin-bottom: 18px; }
+  .contact-text { font-size: 15px; color: rgba(255,255,255,0.4); line-height: 1.9; font-weight: 300; margin-bottom: 36px; }
+  .cinfo { display: flex; flex-direction: column; gap: 16px; }
+  .citem { display: flex; align-items: center; gap: 16px; }
+  .cicon { width: 40px; height: 40px; border: 1px solid rgba(201,169,110,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cicon svg { width: 15px; height: 15px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .citem-lbl { font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
+  .citem-val { font-size: 14px; color: rgba(255,255,255,0.75); }
+  .cform { background: var(--cream); border-radius: 4px; padding: 40px; }
+  .cform-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; margin-bottom: 26px; }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .ffield { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .flabel { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .finput { border: 1px solid #DDD6C8; border-radius: 2px; padding: 11px 13px; font-size: 14px; font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); outline: none; transition: border-color 0.2s; width: 100%; }
+  .finput:focus { border-color: var(--gold); }
+  textarea.finput { resize: vertical; min-height: 96px; }
+  .fsubmit { width: 100%; background: var(--gold); color: var(--dark); border: none; padding: 14px; border-radius: 2px; cursor: pointer; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; font-family: 'Jost', sans-serif; transition: background 0.2s; margin-top: 6px; }
+  .fsubmit:hover { background: var(--gold-dark); color: var(--white); }
+
+  .social-links { display: flex; gap: 12px; margin-top: 32px; }
+  .social-link { width: 42px; height: 42px; border: 1px solid rgba(201,169,110,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+  .social-link:hover { background: rgba(201,169,110,0.12); border-color: var(--gold); }
+  .social-link svg { width: 16px; height: 16px; fill: var(--gold); }
+  .footer-socials { display: flex; gap: 10px; }
+  .footer-social { width: 34px; height: 34px; border: 1px solid rgba(201,169,110,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: border-color 0.2s; }
+  .footer-social:hover { border-color: var(--gold); }
+  .footer-social svg { width: 14px; height: 14px; fill: rgba(255,255,255,0.35); transition: fill 0.2s; }
+  .footer-social:hover svg { fill: var(--gold); }
+
+  footer { background: var(--dark); border-top: 1px solid rgba(201,169,110,0.1); padding: 28px 6vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,0.22); }
+  .footer-links { display: flex; gap: 22px; }
+  .footer-links a { font-size: 11px; color: rgba(255,255,255,0.28); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  .faq { padding: var(--section-pad); background: var(--dark); }
+  .faq-hdr { text-align: center; margin-bottom: 56px; }
+  .faq-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; color: var(--white); margin-bottom: 12px; }
+  .faq-sub { font-size: 14px; color: rgba(255,255,255,0.35); font-weight: 300; }
+  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+  .faq-item { border: 1px solid rgba(201,169,110,0.1); border-radius: 3px; overflow: hidden; }
+  .faq-q { width: 100%; background: rgba(255,255,255,0.03); border: none; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; gap: 20px; transition: background 0.2s; }
+  .faq-q:hover { background: rgba(201,169,110,0.06); }
+  .faq-q.open { background: rgba(201,169,110,0.07); border-bottom: 1px solid rgba(201,169,110,0.1); }
+  .faq-q-text { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--white); line-height: 1.3; }
+  .faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s, background 0.2s; }
+  .faq-icon svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 2; transition: transform 0.3s; }
+  .faq-q.open .faq-icon { background: rgba(201,169,110,0.12); }
+  .faq-q.open .faq-icon svg { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+  .faq-a.open { max-height: 300px; }
+  .faq-a-inner { padding: 20px 28px 24px; font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.9; font-weight: 300; }
+  .faq-a-inner a { color: var(--gold); text-decoration: none; }
+  .faq-a-inner a:hover { text-decoration: underline; }
+
+  .blog { padding: var(--section-pad); background: var(--cream); }
+  .blog-hdr { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+  .blog-card { background: var(--white); border: 1px solid #E8E0D0; border-radius: 4px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
+  .blog-card:hover { transform: translateY(-4px); }
+  .blog-card.featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; }
+  .blog-img { height: 220px; position: relative; overflow: hidden; }
+  .blog-card.featured .blog-img { height: 100%; min-height: 260px; }
+  .blog-img-bg { position: absolute; inset: 0; transition: transform 0.4s ease; }
+  .blog-card:hover .blog-img-bg { transform: scale(1.04); }
+  .blog-cat { position: absolute; top: 14px; left: 14px; background: var(--gold); color: var(--dark); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 11px; border-radius: 2px; font-weight: 500; z-index: 1; }
+  .blog-body { padding: 24px 26px; }
+  .blog-card.featured .blog-body { padding: 36px 36px; display: flex; flex-direction: column; justify-content: center; }
+  .blog-meta { font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 10px; display: flex; gap: 14px; }
+  .blog-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; line-height: 1.3; margin-bottom: 10px; color: var(--text); }
+  .blog-card.featured .blog-title { font-size: 28px; margin-bottom: 14px; }
+  .blog-excerpt { font-size: 13px; color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 18px; }
+  .blog-read { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); text-decoration: none; border-bottom: 1px solid var(--gold-light); padding-bottom: 1px; display: inline-block; }
+  .blog-read:hover { color: var(--gold); border-color: var(--gold); }
+
+  .team { padding: var(--section-pad); background: var(--dark); }
+  .team-hdr { text-align: center; margin-bottom: 56px; }
+  .team-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; color: var(--white); margin-bottom: 14px; }
+  .team-sub { font-size: 15px; color: rgba(255,255,255,0.4); max-width: 560px; margin: 0 auto; line-height: 1.85; font-weight: 300; }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; }
+  .team-item { background: rgba(255,255,255,0.025); border: 1px solid rgba(201,169,110,0.08); padding: 36px 28px; text-align: center; transition: background 0.3s, border-color 0.3s; }
+  .team-item:hover { background: rgba(201,169,110,0.06); border-color: rgba(201,169,110,0.25); }
+  .team-icon { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(201,169,110,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--gold); }
+  .team-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .team-item-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--white); font-weight: 400; margin-bottom: 10px; }
+  .team-item-text { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.8; font-weight: 300; }
+  .team-cta { text-align: center; margin-top: 52px; }
+  .team-cta-text { font-size: 15px; color: rgba(255,255,255,0.45); margin-bottom: 24px; font-weight: 300; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; }
+
+  .calendly-bar { background: var(--gold); padding: 28px 6vw; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .calendly-bar-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--dark); font-weight: 400; }
+  .calendly-bar-text span { font-style: italic; }
+  .calendly-btn { background: var(--dark); color: var(--gold); padding: 13px 30px; border-radius: 2px; text-decoration: none; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; white-space: nowrap; transition: background 0.2s; display: inline-block; }
+  .calendly-btn:hover { background: var(--dark-soft); }
+  .cal-float { position: fixed; bottom: 28px; right: 28px; z-index: 99; background: var(--gold); color: var(--dark); padding: 13px 22px; border-radius: 30px; text-decoration: none; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: background 0.2s, transform 0.2s; }
+  .cal-float:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .cal-float svg { width: 15px; height: 15px; fill: none; stroke: var(--dark); stroke-width: 2; flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    .calendly-bar { flex-direction: column; text-align: center; }
+    .cal-float { bottom: 16px; right: 16px; padding: 11px 18px; font-size: 11px; }
+    .blog-card.featured { grid-column: span 1; display: block; }
+    .blog-card.featured .blog-img { height: 200px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .about, .contact-inner { grid-template-columns: 1fr; gap: 44px; }
+    .nav-links { display: none; }
+    .calc-inputs, .calc-output { padding: 26px 22px; }
+    .prop-hdr { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .frow { grid-template-columns: 1fr; }
+    .cform { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://michellebarriosrealtor.com">Michelle Barrios</a>
+  <ul class="nav-links">
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#properties">Propiedades</a></li>
+    <li><a href="#calculator">Calculadora</a></li>
+    <li><a href="#team">Mi Equipo</a></li>
+    <li><a href="#de-cero-a-casa">De Cero a Casa™</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#guia">Guía Gratis</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="https://calendly.com/realtormichellebg" target="_blank">Agendar Llamada</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Realtor® NAR · Especialista en Florida Central</div>
+    <h1 class="hero-title">Encuentra tu <em>Hogar Ideal</em> en Florida</h1>
+    <p class="hero-sub">Experta en el mercado de Ocala y toda Florida — te guío en cada paso del proceso con honestidad, dedicación y el conocimiento local que marca la diferencia.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#properties">Ver Propiedades</a>
+      <a class="btn-outline" href="#contact">Contáctame</a>
+    </div>
+
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-overlay">
+      <div class="agent-card">
+        <div class="agent-avatar">MB</div>
+        <div class="agent-name">Michelle Barrios</div>
+        <div class="agent-title-text">Realtor® · Miembro NAR · Florida Central</div>
+        <div class="agent-badges">
+          <span class="badge">Realtor® NAR</span>
+          <span class="badge">Experta en Ocala</span>
+          <span class="badge">Florida Central</span>
+          <span class="badge">Lic. en Marketing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDLY BAR -->
+<div class="calendly-bar">
+  <div class="calendly-bar-text">¿Lista para dar el primer paso? <span>Agenda una llamada gratuita conmigo.</span></div>
+  <a class="calendly-btn" href="https://calendly.com/realtormichellebg" target="_blank">Reservar mi cita →</a>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div>
+    <div class="section-label">Sobre Mí</div>
+    <h2 class="section-title">Tu Agente de <em>Confianza</em> en Florida</h2>
+    <p class="about-text">Soy Michelle Barrios, <strong style="font-weight:500;">Realtor® registrada en la National Association of Realtors (NAR)</strong> y agente licenciada en el estado de Florida. Ser Realtor® significa que estoy sujeta a un estricto Código de Ética profesional — una garantía de honestidad, transparencia y compromiso que no todos los agentes tienen.</p>
+    <p class="about-text">Mi formación como Licenciada en Marketing de la Universidad Rafael Belloso Chacín me da una ventaja única: sé cómo posicionar tu propiedad, atraer compradores calificados y negociar al mejor precio. No solo te ayudo a comprar o vender — te doy una estrategia.</p>
+    <p class="about-text">Conozco Ocala como nadie, y aunque soy la referencia en esta ciudad, trabajo en toda Florida para que siempre tengas la mejor representación, estés donde estés.</p>
+    <div class="signature">Michelle Barrios</div>
+  </div>
+  <div class="feats">
+    <div class="feat">
+      <div class="feat-title">Realtor® registrada en la NAR</div>
+      <div class="feat-text">Miembro de la National Association of Realtors — sujeta a un Código de Ética estricto que garantiza honestidad y profesionalismo en cada transacción.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-title">Estrategia de marketing profesional</div>
+      <div class="feat-text">Licenciada en Marketing — sé cómo presentar tu propiedad para atraer a los compradores correctos en el menor tiempo posible.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-title">Mercado local profundo</div>
+      <div class="feat-text">Conocimiento detallado de vecindarios, precios y tendencias en todo Florida.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-title">Comunicación constante</div>
+      <div class="feat-text">Te mantengo informado en cada etapa del proceso, sin sorpresas.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-title">Negociación experta</div>
+      <div class="feat-text">Defiendo tus intereses para obtener las mejores condiciones en cada transacción.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-title">Red de profesionales</div>
+      <div class="feat-text">Acceso a inspectores, prestamistas y abogados para apoyarte de principio a fin.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div class="section-label" style="justify-content:center; color:var(--gold);">Lo Que Ofrezco</div>
+    <h2 class="services-title">Servicios Inmobiliarios</h2>
+    <p class="services-sub">Soluciones completas para compradores, vendedores e inversores en el mercado de Florida.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv">
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <div class="srv-title">Compra de Propiedades</div>
+      <div class="srv-text">Te acompaño desde la búsqueda hasta el cierre, encontrando la propiedad ideal dentro de tu presupuesto.</div>
+    </div>
+    <div class="srv">
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="srv-title">Venta de Propiedades</div>
+      <div class="srv-text">Estrategia de marketing personalizada, fotografía profesional y negociación experta para vender al mejor precio.</div>
+    </div>
+    <div class="srv">
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div class="srv-title">Inversión Inmobiliaria</div>
+      <div class="srv-text">Análisis de mercado y ROI para identificar las mejores oportunidades de inversión en Florida.</div>
+    </div>
+    <div class="srv">
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+      </div>
+      <div class="srv-title">Relocation a Florida</div>
+      <div class="srv-text">Ayudo a familias que se mudan a Florida a encontrar su hogar ideal en el menor tiempo posible.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<section class="properties" id="properties">
+  <div class="prop-hdr">
+    <div>
+      <div class="section-label">Listados</div>
+      <h2 class="section-title">Propiedades <em>Destacadas</em></h2>
+    </div>
+    <a class="view-all" href="#contact">Ver todas →</a>
+  </div>
+  <div class="prop-grid">
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-bg" style="background:linear-gradient(160deg,#2a4a3a,#1a3028);"></div>
+        <span class="prop-tag">En Venta</span>
+        <div class="prop-price">$649,000</div>
+      </div>
+      <div class="prop-body">
+        <div class="prop-name">Residencia Moderna en Ocala</div>
+        <div class="prop-loc">Ocala, FL 34471</div>
+        <div class="prop-specs">
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>4 hab.</span>
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h7"/></svg>3 baños</span>
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>2,450 sqft</span>
+        </div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-bg" style="background:linear-gradient(160deg,#3a2a1a,#281e10);"></div>
+        <span class="prop-tag">En Venta</span>
+        <div class="prop-price">$425,000</div>
+      </div>
+      <div class="prop-body">
+        <div class="prop-name">Casa en Silver Springs Shores</div>
+        <div class="prop-loc">Ocala, FL 34472</div>
+        <div class="prop-specs">
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>3 hab.</span>
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h7"/></svg>2.5 baños</span>
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>1,890 sqft</span>
+        </div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img">
+        <div class="prop-img-bg" style="background:linear-gradient(160deg,#1a2a3a,#101828);"></div>
+        <span class="prop-tag" style="background:var(--dark-soft);color:var(--gold);">Vendido</span>
+        <div class="prop-price">$1,250,000</div>
+      </div>
+      <div class="prop-body">
+        <div class="prop-name">Villa de Lujo en Naples</div>
+        <div class="prop-loc">Naples, FL 34102</div>
+        <div class="prop-specs">
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>5 hab.</span>
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h7"/></svg>4 baños</span>
+          <span class="prop-spec"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>4,200 sqft</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator" id="calculator">
+  <div class="calc-hdr">
+    <div class="section-label" style="justify-content:center;">Herramienta</div>
+    <h2 class="section-title" style="text-align:center;">Calculadora de <em>Mortgage</em></h2>
+    <p class="calc-sub">Estima tu pago mensual incluyendo property tax y seguro para propiedades en Florida.</p>
+  </div>
+  <div class="calc-wrap">
+    <div class="calc-box">
+      <div class="calc-inputs">
+        <div class="c-grid">
+          <div class="c-field">
+            <label class="c-label">Precio de propiedad <span class="c-val" id="cp">$400,000</span></label>
+            <input type="range" id="rp" min="100000" max="2000000" step="5000" value="400000" oninput="mc()">
+          </div>
+          <div class="c-field">
+            <label class="c-label">Down payment <span class="c-val" id="cd">20%</span></label>
+            <input type="range" id="rd" min="3" max="50" step="1" value="20" oninput="mc()">
+          </div>
+          <div class="c-field">
+            <label class="c-label">Tasa de interés anual <span class="c-val" id="cr">6.8%</span></label>
+            <input type="range" id="rr" min="3" max="12" step="0.1" value="6.8" oninput="mc()">
+          </div>
+          <div class="c-field">
+            <label class="c-label">Plazo del préstamo <span class="c-val" id="ct">30 años</span></label>
+            <input type="range" id="rt" min="5" max="30" step="5" value="30" oninput="mc()">
+          </div>
+          <div class="c-field">
+            <label class="c-label">Property tax anual <span class="c-val" id="ctx">$3,200</span></label>
+            <input type="range" id="rtx" min="0" max="20000" step="100" value="3200" oninput="mc()">
+          </div>
+          <div class="c-field">
+            <label class="c-label">Seguro HOA anual <span class="c-val" id="ci">$1,800</span></label>
+            <input type="range" id="ri" min="0" max="10000" step="100" value="1800" oninput="mc()">
+          </div>
+        </div>
+      </div>
+      <div class="calc-output">
+        <div class="output-main">
+          <div class="out-item"><span class="out-num" id="o-total">$2,618</span><span class="out-lbl">Pago mensual total</span></div>
+          <div class="out-item"><span class="out-num" id="o-pi">$2,085</span><span class="out-lbl">Principal + interés</span></div>
+          <div class="out-item"><span class="out-num" id="o-loan">$320,000</span><span class="out-lbl">Monto del préstamo</span></div>
+        </div>
+        <div class="out-detail">
+          <div class="out-row"><span class="out-row-lbl">Principal + Interés</span><span class="out-row-val" id="d-pi">$2,085/mes</span></div>
+          <div class="out-row"><span class="out-row-lbl">Property Tax</span><span class="out-row-val" id="d-tax">$267/mes</span></div>
+          <div class="out-row"><span class="out-row-lbl">HOA</span><span class="out-row-val" id="d-ins">$150/mes</span></div>
+          <div class="out-row ttl"><span class="out-row-lbl">Total Mensual</span><span class="out-row-val" id="d-total">$2,618/mes</span></div>
+          <div class="bar-track">
+            <div class="bar-seg bp" id="barp" style="width:40%"></div>
+            <div class="bar-seg bi" id="bari" style="width:40%"></div>
+            <div class="bar-seg bt" id="bart" style="width:20%"></div>
+          </div>
+          <div class="bar-legend">
+            <div class="leg"><div class="leg-dot" style="background:var(--gold)"></div>Principal</div>
+            <div class="leg"><div class="leg-dot" style="background:rgba(201,169,110,0.38)"></div>Interés</div>
+            <div class="leg"><div class="leg-dot" style="background:rgba(255,255,255,0.13)"></div>Tax + HOA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="tst-hdr">
+    <div class="section-label" style="justify-content:center;">Testimonios</div>
+    <h2 class="section-title" style="text-align:center;">Lo Que Dicen Mis <em>Clientes</em></h2>
+  </div>
+  <div class="tst-grid">
+    <div class="tst-card">
+      <div class="tst-stars">★★★★★</div>
+      <div class="tst-quote">"Michelle conoce Ocala mejor que nadie. Nos ayudó a encontrar nuestra casa en el vecindario perfecto en tiempo récord. ¡Su conocimiento local es increíble!"</div>
+      <div class="tst-author">Roberto & Carmen Suárez</div>
+      <div class="tst-loc">Ocala, FL</div>
+    </div>
+    <div class="tst-card">
+      <div class="tst-stars">★★★★★</div>
+      <div class="tst-quote">"Vendimos nuestra propiedad en Ocala en menos de dos semanas y por encima del precio que esperábamos. Michelle sabe exactamente cómo posicionar una casa en este mercado."</div>
+      <div class="tst-author">Luis & Patricia Morales</div>
+      <div class="tst-loc">Ocala, FL</div>
+    </div>
+    <div class="tst-card">
+      <div class="tst-stars">★★★★★</div>
+      <div class="tst-quote">"Llegamos a Ocala sin conocer nada y Michelle nos guió paso a paso. Hoy tenemos nuestra primera casa aquí y no podríamos estar más felices con la decisión."</div>
+      <div class="tst-author">Familia Jiménez</div>
+      <div class="tst-loc">Ocala, FL</div>
+    </div>
+    <div class="tst-card">
+      <div class="tst-stars">★★★★★</div>
+      <div class="tst-quote">"Yo pensaba que comprar mi casa iba a tomar al menos 3 años más. Michelle me demostró que estaba más cerca de lograrlo de lo que creía. Hoy tengo las llaves de mi primer hogar y no puedo creerlo."</div>
+      <div class="tst-author">Miguel & Soranyi Torres</div>
+      <div class="tst-loc">Davenport, FL</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* GUIA SECTION */
+  @keyframes fadeUpGuia { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+  .guia-section { background: linear-gradient(160deg, #0F3460 0%, #16527A 60%, #1A6B9A 100%); padding: 0; position: relative; overflow: hidden; }
+  .guia-section::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.12) 0%, transparent 60%); pointer-events:none; }
+  .guia-pattern { position:absolute; inset:0; opacity:0.04; background-image: repeating-linear-gradient(45deg, #C9A96E 0, #C9A96E 1px, transparent 0, transparent 50%); background-size:20px 20px; pointer-events:none; }
+
+  /* HERO */
+  .guia-hero { padding: 90px 6vw 80px; text-align:center; position:relative; z-index:2; }
+  .guia-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(201,169,110,0.15); border:1px solid rgba(201,169,110,0.35); border-radius:30px; padding:7px 20px; margin-bottom:28px; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); animation: fadeUpGuia 0.6s ease both; }
+  .guia-badge::before { content:'🏡'; font-size:13px; }
+  .guia-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(34px,6vw,72px); font-weight:300; color:var(--white); line-height:1.08; margin-bottom:20px; animation: fadeUpGuia 0.7s ease 0.1s both; }
+  .guia-hero-title em { color:var(--gold); font-style:italic; }
+  .guia-hero-sub { font-size:clamp(15px,1.8vw,18px); color:rgba(255,255,255,0.6); line-height:1.8; max-width:580px; margin:0 auto 36px; font-weight:300; animation: fadeUpGuia 0.7s ease 0.2s both; }
+  .guia-btn-primary { display:inline-block; background:var(--gold); color:#0F3460; padding:18px 48px; border-radius:2px; text-decoration:none; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; transition:all 0.2s; box-shadow:0 6px 28px rgba(201,169,110,0.35); animation: fadeUpGuia 0.7s ease 0.3s both; cursor:pointer; border:none; font-family:'Jost',sans-serif; }
+  .guia-btn-primary:hover { background:var(--gold-light); transform:translateY(-3px); box-shadow:0 10px 36px rgba(201,169,110,0.45); }
+  .guia-btn-note { font-size:12px; color:rgba(255,255,255,0.3); margin-top:14px; animation: fadeUpGuia 0.7s ease 0.35s both; }
+
+  /* PAIN */
+  .guia-pain { background:rgba(255,255,255,0.04); border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); padding:64px 6vw; position:relative; z-index:2; }
+  .guia-pain-inner { max-width:760px; margin:0 auto; text-align:center; }
+  .guia-pain-label { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:flex; align-items:center; justify-content:center; gap:10px; }
+  .guia-pain-label::before,.guia-pain-label::after { content:''; display:block; width:20px; height:1px; background:var(--gold); }
+  .guia-pain-title { font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.5vw,44px); font-weight:300; color:var(--white); line-height:1.2; margin-bottom:20px; }
+  .guia-pain-title em { color:var(--gold); font-style:italic; }
+  .guia-pain-text { font-size:16px; color:rgba(255,255,255,0.55); line-height:1.9; margin-bottom:12px; font-weight:300; }
+  .guia-pain-highlight { font-family:'Cormorant Garamond',serif; font-size:clamp(18px,2.5vw,26px); font-style:italic; color:var(--gold-light); margin-top:24px; line-height:1.6; }
+
+  /* VALUE */
+  .guia-value { padding:72px 6vw; background:rgba(255,255,255,0.03); position:relative; z-index:2; }
+  .guia-value-inner { max-width:820px; margin:0 auto; }
+  .guia-value-title { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,3vw,38px); font-weight:300; color:var(--white); text-align:center; margin-bottom:44px; }
+  .guia-value-title em { color:var(--gold); font-style:italic; }
+  .guia-bullets { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .guia-bullet { background:rgba(255,255,255,0.05); border:1px solid rgba(201,169,110,0.18); border-radius:4px; padding:24px 26px; display:flex; align-items:flex-start; gap:16px; transition:background 0.2s,border-color 0.2s; }
+  .guia-bullet:hover { background:rgba(201,169,110,0.08); border-color:rgba(201,169,110,0.35); }
+  .guia-bullet-icon { width:40px; height:40px; border-radius:50%; background:rgba(201,169,110,0.15); border:1px solid rgba(201,169,110,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px; }
+  .guia-bullet-text { font-size:15px; color:rgba(255,255,255,0.75); line-height:1.65; }
+  .guia-bullet-text strong { color:var(--white); font-weight:500; display:block; margin-bottom:4px; font-size:15px; }
+
+  /* FORM */
+  .guia-form-section { padding:72px 6vw; position:relative; z-index:2; }
+  .guia-form-box { max-width:560px; margin:0 auto; background:rgba(255,255,255,0.06); border:1px solid rgba(201,169,110,0.25); border-radius:4px; padding:48px 44px; }
+  .guia-form-title { font-family:'Cormorant Garamond',serif; font-size:clamp(22px,2.5vw,32px); font-weight:300; color:var(--white); text-align:center; margin-bottom:8px; line-height:1.3; }
+  .guia-form-sub { font-size:14px; color:rgba(255,255,255,0.45); text-align:center; margin-bottom:32px; font-weight:300; line-height:1.7; }
+  .guia-field { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+  .guia-label { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); }
+  .guia-input { border:1px solid rgba(255,255,255,0.12); border-radius:2px; padding:13px 16px; font-size:14px; font-family:'Jost',sans-serif; color:var(--white); background:rgba(255,255,255,0.07); outline:none; transition:border-color 0.2s; width:100%; }
+  .guia-input::placeholder { color:rgba(255,255,255,0.25); }
+  .guia-input:focus { border-color:var(--gold); background:rgba(255,255,255,0.1); }
+  .guia-submit { width:100%; background:var(--gold); color:#0F3460; border:none; padding:16px; border-radius:2px; cursor:pointer; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; font-family:'Jost',sans-serif; transition:all 0.2s; margin-top:8px; }
+  .guia-submit:hover { background:var(--gold-light); transform:translateY(-2px); }
+  .guia-privacy { font-size:11px; color:rgba(255,255,255,0.2); text-align:center; margin-top:14px; line-height:1.6; }
+
+  /* GRACIAS */
+  .guia-thanks { display:none; text-align:center; padding:40px 20px; }
+  .guia-thanks-icon { font-size:52px; margin-bottom:16px; }
+  .guia-thanks-title { font-family:'Cormorant Garamond',serif; font-size:32px; color:var(--white); font-weight:300; margin-bottom:12px; }
+  .guia-thanks-text { font-size:15px; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:28px; font-weight:300; }
+  .guia-wa-btn { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; padding:14px 28px; border-radius:30px; text-decoration:none; font-size:13px; font-weight:600; letter-spacing:0.06em; transition:all 0.2s; }
+  .guia-wa-btn:hover { background:#20BA5A; transform:translateY(-2px); }
+  .guia-wa-btn svg { width:20px; height:20px; fill:#fff; }
+
+  /* TRUST CLOSE */
+  .guia-close { padding:72px 6vw 90px; text-align:center; position:relative; z-index:2; border-top:1px solid rgba(255,255,255,0.06); }
+  .guia-close-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,54px); font-weight:300; color:var(--white); line-height:1.15; margin-bottom:20px; }
+  .guia-close-title em { color:var(--gold); font-style:italic; }
+  .guia-close-text { font-size:16px; color:rgba(255,255,255,0.5); max-width:500px; margin:0 auto 36px; line-height:1.85; font-weight:300; }
+  .guia-sig { font-family:'Cormorant Garamond',serif; font-size:32px; font-style:italic; color:var(--gold); margin-bottom:32px; }
+  .guia-social { display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap; }
+  .guia-social-link { display:flex; align-items:center; gap:8px; padding:10px 20px; border:1px solid rgba(201,169,110,0.3); border-radius:30px; text-decoration:none; font-size:12px; color:rgba(255,255,255,0.55); letter-spacing:0.06em; transition:all 0.2s; }
+  .guia-social-link:hover { border-color:var(--gold); color:var(--gold); }
+  .guia-social-link svg { width:16px; height:16px; fill:currentColor; }
+
+  /* FLOATING WHATSAPP */
+  .guia-float-wa { position:fixed; bottom:90px; right:24px; z-index:200; width:52px; height:52px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); transition:transform 0.2s; text-decoration:none; }
+  .guia-float-wa:hover { transform:scale(1.1); }
+  .guia-float-wa svg { width:26px; height:26px; fill:#fff; }
+
+  @media (max-width:768px) {
+    .guia-form-box { padding:32px 24px; }
+    .guia-hero { padding:70px 5vw 60px; }
+  }
+</style>
+
+<!-- GUIA COMPRADORES -->
+<section id="guia" class="guia-section">
+  <div class="guia-pattern"></div>
+
+  <!-- HERO -->
+  <div class="guia-hero">
+    <div class="guia-badge">Guía gratuita para primeros compradores</div>
+    <h2 class="guia-hero-title">Descubre si puedes comprar casa<br>en Florida <em>aunque creas que no calificas</em></h2>
+    <p class="guia-hero-sub">Guía rápida para primeros compradores: sin estrés, sin tecnicismos y con pasos claros.</p>
+    <button class="guia-btn-primary" onclick="document.getElementById('guia-form').scrollIntoView({behavior:'smooth'})">🏡 QUIERO MI PLAN</button>
+    <p class="guia-btn-note">Gratis · Sin compromisos · Respuesta en menos de 24h</p>
+  </div>
+
+  <!-- PAIN -->
+  <div class="guia-pain">
+    <div class="guia-pain-inner">
+      <div class="guia-pain-label">¿Te suena familiar?</div>
+      <h3 class="guia-pain-title">Si has pensado: <em>"eso no es para mí"</em>…<br>no eres la única.</h3>
+      <p class="guia-pain-text">Muchas personas llevan meses — o años — queriendo comprar su casa pero se quedan paralizadas por el miedo, la confusión o la falta de información.</p>
+      <p class="guia-pain-text">La verdad es que la mayoría no es que <strong>no puede</strong> comprar.</p>
+      <p class="guia-pain-highlight">"Es que no sabe qué le falta. Y cuando no sabes, te frenas."</p>
+    </div>
+  </div>
+
+  <!-- VALUE -->
+  <div class="guia-value">
+    <div class="guia-value-inner">
+      <h3 class="guia-value-title">Con esta guía <em>gratuita</em> vas a:</h3>
+      <div class="guia-bullets">
+        <div class="guia-bullet">
+          <div class="guia-bullet-icon">✅</div>
+          <div class="guia-bullet-text"><strong>Saber si estás cerca de comprar</strong>Descubre en minutos cuál es tu punto de partida real — sin suposiciones.</div>
+        </div>
+        <div class="guia-bullet">
+          <div class="guia-bullet-icon">🔍</div>
+          <div class="guia-bullet-text"><strong>Entender qué te falta exactamente</strong>Crédito, ahorros, documentos — sabrás qué necesitas y cuánto falta.</div>
+        </div>
+        <div class="guia-bullet">
+          <div class="guia-bullet-icon">🚀</div>
+          <div class="guia-bullet-text"><strong>Ver qué puedes hacer desde YA</strong>Pasos concretos que puedes empezar hoy, sin importar dónde estés.</div>
+        </div>
+        <div class="guia-bullet">
+          <div class="guia-bullet-icon">💡</div>
+          <div class="guia-bullet-text"><strong>Conocer opciones aunque tu crédito no sea perfecto</strong>Hay programas y soluciones que la mayoría de agentes no te cuentan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="guia-form-section" id="guia-form">
+    <div class="guia-form-box" id="guia-form-container">
+      <h3 class="guia-form-title">Déjame tus datos y te envío<br>la guía + tu siguiente paso claro</h3>
+      <p class="guia-form-sub">Completa el formulario y en menos de 24 horas recibes tu guía personalizada directo a tu email.</p>
+      <form id="leadForm" name="leads-michelle" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="submitForm(event)">
+        <input type="hidden" name="form-name" value="leads-michelle">
+        <input type="hidden" name="bot-field" style="display:none">
+        <div class="guia-field">
+          <label class="guia-label">Tu nombre</label>
+          <input class="guia-input" type="text" id="lead-name" name="nombre" placeholder="¿Cómo te llamas?" required>
+        </div>
+        <div class="guia-field">
+          <label class="guia-label">Email</label>
+          <input class="guia-input" type="email" id="lead-email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="guia-field">
+          <label class="guia-label">Teléfono / WhatsApp</label>
+          <input class="guia-input" type="tel" id="lead-phone" name="telefono" placeholder="+1 (000) 000-0000" required>
+        </div>
+        <button type="submit" class="guia-submit">📩 ENVIAR Y VER MI PLAN</button>
+        <p class="guia-privacy">🔒 Tu información es privada y nunca será compartida. Recibirás solo información valiosa de Michelle.</p>
+      </form>
+
+      <!-- THANKS MESSAGE -->
+      <div class="guia-thanks" id="guia-thanks">
+        <div class="guia-thanks-icon">🎉</div>
+        <div class="guia-thanks-title">¡Listo! Ya estás un paso más cerca.</div>
+        <div class="guia-thanks-text">Revisa tu email para ver la guía.<br>Si quieres avanzar más rápido, escríbeme por WhatsApp ahora mismo.</div>
+        <a class="guia-wa-btn" href="https://wa.me/17272265975?text=Hola%20Michelle!%20Acabo%20de%20descargar%20la%20guia%20y%20quiero%20saber%20mas%20sobre%20comprar%20casa%20en%20Florida" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escríbeme por WhatsApp →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSE / TRUST -->
+  <div class="guia-close">
+    <h3 class="guia-close-title">No necesitas ser <em>perfecta</em><br>para comprar casa.</h3>
+    <p class="guia-close-text">Necesitas claridad. Estoy aquí para ayudarte paso a paso — sin juicios, sin tecnicismos y con toda la información que necesitas para tomar la mejor decisión para tu familia.</p>
+    <div class="guia-sig">Michelle Barrios</div>
+    <button class="guia-btn-primary" onclick="document.getElementById('guia-form').scrollIntoView({behavior:'smooth'})">📩 ENVIAR Y VER MI PLAN</button>
+
+    <div class="guia-social">
+      <a class="guia-social-link" href="https://instagram.com/realtormichelleb" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @realtormichelleb
+      </a>
+      <a class="guia-social-link" href="https://tiktok.com/@realtormichelleb" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+        @realtormichelleb
+      </a>
+      <a class="guia-social-link" href="https://wa.me/17272265975" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="guia-float-wa" href="https://wa.me/17272265975?text=Hola%20Michelle!%20Vi%20tu%20pagina%20y%20quiero%20saber%20mas%20sobre%20comprar%20casa%20en%20Florida" target="_blank" title="Escríbeme por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('leadForm');
+  const name = document.getElementById('lead-name').value;
+  const email = document.getElementById('lead-email').value;
+  const phone = document.getElementById('lead-phone').value;
+
+  // Submit to Netlify Forms
+  const formData = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(() => {
+    // Show thanks message
+    document.getElementById('leadForm').style.display = 'none';
+    document.getElementById('guia-thanks').style.display = 'block';
+    document.getElementById('guia-thanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  })
+  .catch(() => {
+    // Even if fetch fails, show thanks (Netlify may still process it)
+    document.getElementById('leadForm').style.display = 'none';
+    document.getElementById('guia-thanks').style.display = 'block';
+    document.getElementById('guia-thanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+</script>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label" style="color:var(--gold);">Contáctame</div>
+      <h2 class="contact-title">Hablemos de Tu Próxima Propiedad</h2>
+      <p class="contact-text">Soy tu experta en Ocala y trabajo en todo Florida. Si estás pensando en comprar, vender o invertir — aquí o en cualquier ciudad del estado — hablemos hoy.</p>
+      <a class="btn-primary" href="https://calendly.com/realtormichellebg" target="_blank" style="margin-bottom:32px; display:inline-block;">
+        📅 Agendar llamada gratis →
+      </a>
+      <div class="cinfo">
+        <div class="citem">
+          <div class="cicon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010.22 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg></div>
+          <div><div class="citem-lbl">Teléfono</div><div class="citem-val">+1 (727) 226-5975</div></div>
+        </div>
+        <div class="citem">
+          <div class="cicon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="citem-lbl">Email</div><div class="citem-val">realtormichellebg@gmail.com</div></div>
+        </div>
+        <div class="citem">
+          <div class="cicon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="citem-lbl">Mercado</div><div class="citem-val">Florida Central</div></div>
+        </div>
+      </div>
+      <div class="social-links">
+        <a class="social-link" href="https://instagram.com/realtormichelleb" target="_blank" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a class="social-link" href="https://facebook.com/realtormichelleb" target="_blank" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a class="social-link" href="https://tiktok.com/@realtormichelleb" target="_blank" title="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+        </a>
+        <a class="social-link" href="https://wa.me/17272265975" target="_blank" title="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="cform">
+      <div class="cform-title">Envíame un Mensaje</div>
+      <div class="frow">
+        <div class="ffield"><label class="flabel">Nombre</label><input class="finput" type="text" placeholder="Tu nombre"></div>
+        <div class="ffield"><label class="flabel">Teléfono</label><input class="finput" type="tel" placeholder="+1 (000) 000-0000"></div>
+      </div>
+      <div class="ffield"><label class="flabel">Email</label><input class="finput" type="email" placeholder="tu@email.com"></div>
+      <div class="ffield">
+        <label class="flabel">¿En qué te puedo ayudar?</label>
+        <select class="finput">
+          <option>Comprar una propiedad</option>
+          <option>Vender mi propiedad</option>
+          <option>Inversión inmobiliaria</option>
+          <option>Relocation a Florida</option>
+          <option>Otra consulta</option>
+        </select>
+      </div>
+      <div class="ffield"><label class="flabel">Mensaje</label><textarea class="finput" placeholder="Cuéntame sobre tu búsqueda o propiedad..."></textarea></div>
+      <button class="fsubmit" onclick="this.textContent='¡Mensaje enviado!'; this.style.background='#3B6D11'; this.style.color='#fff';">Enviar Mensaje</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-hdr">
+    <div class="section-label" style="justify-content:center; color:var(--gold);">FAQ</div>
+    <h2 class="faq-title">Preguntas <em style="font-style:italic; color:var(--gold);">Frecuentes</em></h2>
+    <p class="faq-sub">Todo lo que necesitas saber antes de comprar, vender o invertir en Florida.</p>
+  </div>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Cuánto dinero necesito para comprar una casa en Florida?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Depende del tipo de préstamo. Con un FHA loan puedes comenzar con un 3.5% de down payment. Para conventional loans el mínimo es 3-5%. Además del down payment, debes considerar los closing costs (2-5% del precio de compra), la inspección y la reserva de emergencia. Contáctame y hacemos un análisis personalizado según tu situación.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Cuánto tiempo tarda el proceso de compra de una propiedad?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">En promedio, el proceso toma entre 30 y 60 días desde que se acepta tu oferta hasta el cierre. Esto incluye la inspección, el appraisal, la aprobación del préstamo y la firma final. Si compras en efectivo, el proceso puede ser mucho más rápido — incluso 2 semanas.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Necesito ser ciudadano o residente para comprar una propiedad en Florida?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">No. Los extranjeros pueden comprar propiedades en Florida sin restricciones. Sin embargo, las opciones de financiamiento son más limitadas para compradores internacionales. Muchos optan por comprar en efectivo o con préstamos especiales para extranjeros (Foreign National loans). Puedo conectarte con los mejores prestamistas para tu caso.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Qué es el homestead exemption y cómo me beneficia?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">El homestead exemption es un beneficio exclusivo de Florida que reduce el valor tasado de tu propiedad principal en hasta $50,000 para fines de property tax. También incluye el Save Our Homes cap, que limita el aumento anual del valor tasado al 3% o el CPI (lo que sea menor). Es una de las grandes ventajas de vivir en Florida.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Cuánto cobra un agente de bienes raíces en Florida?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Como compradora, generalmente no pagas comisión — el vendedor cubre los honorarios del agente. En ventas, la comisión total suele estar entre el 5-6% del precio de venta, dividida entre el agente del vendedor y el del comprador. Cada transacción es diferente; con gusto te explico cómo funciona en tu caso específico.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Cuál es el mejor momento para comprar en Florida?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">En Florida el mercado es activo todo el año. Sin embargo, los meses de octubre a febrero suelen ser más tranquilos, con menos competencia y más espacio para negociar. La primavera y el verano son temporadas altas con más inventario pero también más compradores. Lo más importante es que estés financieramente preparado — el mejor momento es cuando tú estás listo.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Puedo comprar una propiedad para Airbnb o renta corta en Florida?</span>
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">Sí, Florida es uno de los estados más amigables para las inversiones de renta corta. Zonas como Orlando (cercana a Disney), Kissimmee y Miami Beach son especialmente rentables. Sin embargo, cada municipio tiene sus propias regulaciones y algunas comunidades (HOA) lo prohíben. Te ayudo a identificar las propiedades que sí permiten este tipo de negocio.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="team-hdr">
+    <div class="section-label" style="justify-content:center; color:var(--gold);">Mi Equipo</div>
+    <h2 class="team-title">No Estás Solo en Este Proceso</h2>
+    <p class="team-sub">Cuento con un equipo completo de profesionales listos para apoyarte en cada paso — desde preparar tus finanzas hasta cerrar el negocio con éxito.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-item">
+      <div class="team-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="team-item-title">Preparadores de Taxes</div>
+      <div class="team-item-text">Profesionales listos para ayudarte con tu declaración de impuestos y orientarte sobre los beneficios fiscales de ser propietario en Florida.</div>
+    </div>
+    <div class="team-item">
+      <div class="team-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="team-item-title">Reparadores de Crédito</div>
+      <div class="team-item-text">¿Tu crédito no está donde necesitas? Nuestros expertos te ayudan a mejorarlo y prepararte para calificar para el mejor mortgage posible.</div>
+    </div>
+    <div class="team-item">
+      <div class="team-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div class="team-item-title">Asesores de Mortgage</div>
+      <div class="team-item-text">Te conectamos con prestamistas de confianza para encontrar la mejor tasa y el programa de financiamiento ideal para tu situación.</div>
+    </div>
+    <div class="team-item">
+      <div class="team-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="team-item-title">Inspectores de Propiedades</div>
+      <div class="team-item-text">Inspectores certificados que evalúan cada detalle de la propiedad para que compres con total tranquilidad y sin sorpresas.</div>
+    </div>
+    <div class="team-item">
+      <div class="team-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="team-item-title">Abogados de Cierre</div>
+      <div class="team-item-text">Contamos con abogados especializados en real estate que garantizan un proceso de cierre seguro, claro y sin complicaciones legales.</div>
+    </div>
+    <div class="team-item">
+      <div class="team-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="team-item-title">Equipo de Relocation</div>
+      <div class="team-item-text">Si te mudas a Florida Central, te ayudamos con todo — desde encontrar tu hogar hasta instalarte en tu nueva comunidad con comodidad.</div>
+    </div>
+  </div>
+  <div class="team-cta">
+    <p class="team-cta-text">"Tienes a todo un equipo trabajando para ti — no solo una agente."</p>
+    <a class="btn-primary" href="#contact">Contáctame hoy</a>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="blog-hdr">
+    <div>
+      <div class="section-label">Recursos</div>
+      <h2 class="section-title">Blog & <em>Consejos</em> Inmobiliarios</h2>
+    </div>
+    <a class="view-all" href="#">Ver todos →</a>
+  </div>
+  <div class="blog-grid">
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1e3a2e,#112518);"></div>
+        <span class="blog-cat">Mercado</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>15 Abril, 2025</span><span>· 6 min lectura</span></div>
+        <div class="blog-title">El mercado inmobiliario de Florida en 2025: qué esperar como comprador</div>
+        <div class="blog-excerpt">Las tasas de interés se han estabilizado y la demanda en ciudades como Orlando, Tampa y Miami sigue siendo fuerte. Te explico qué tendencias debes conocer antes de tomar una decisión.</div>
+        <a class="blog-read" href="blog/mercado-florida-2025.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#2a1e10,#1c140a);"></div>
+        <span class="blog-cat">Compradores</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>2 Abril, 2025</span><span>· 4 min</span></div>
+        <div class="blog-title">¿Cuánto dinero necesitas realmente para comprar tu primera casa?</div>
+        <div class="blog-excerpt">Down payment, closing costs, inspección... Te desglozo todos los gastos que debes tener listos antes de hacer una oferta.</div>
+        <a class="blog-read" href="blog/cuanto-dinero-primera-casa.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#102030,#0a1520);"></div>
+        <span class="blog-cat">Inversión</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>20 Marzo, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">Las 5 mejores ciudades de Florida para invertir en bienes raíces</div>
+        <div class="blog-excerpt">Desde el crecimiento de Jacksonville hasta el boom de corto plazo en Orlando, analizamos los mercados con mayor potencial de retorno.</div>
+        <a class="blog-read" href="blog/mejores-ciudades-invertir-florida.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#28201a,#1a1410);"></div>
+        <span class="blog-cat">Vendedores</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>10 Marzo, 2025</span><span>· 3 min</span></div>
+        <div class="blog-title">Cómo preparar tu casa para venderla más rápido y al mejor precio</div>
+        <div class="blog-excerpt">Pequeños cambios con gran impacto: desde el home staging hasta la fotografía profesional, estos son los pasos que hacen la diferencia.</div>
+        <a class="blog-read" href="blog/preparar-casa-para-vender.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a2820,#101c15);"></div>
+        <span class="blog-cat">Mortgage</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Feb, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">Pre-aprobación vs pre-calificación: ¿cuál necesitas y cuándo?</div>
+        <div class="blog-excerpt">Muchos compradores confunden estos dos términos y pierden oportunidades. Te explico la diferencia y por qué la pre-aprobación es tu mejor herramienta.</div>
+        <a class="blog-read" href="blog/preaprobacion-vs-precalificacion.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a3020,#0e1f14);"></div>
+        <span class="blog-cat">Ocala · Educación</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>18 Abril, 2025</span><span>· 7 min lectura</span></div>
+        <div class="blog-title">Las mejores escuelas de Ocala, FL: guía completa para familias</div>
+        <div class="blog-excerpt">Conoce las escuelas públicas y privadas más destacadas de Ocala — desde primaria hasta high school. Si estás pensando en mudarte con tu familia, esta guía es para ti. Marion County Schools, Forest High School, Vanguard High School y más.</div>
+        <a class="blog-read" href="blog/escuelas-ocala-florida.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#2a1a10,#1c1008);"></div>
+        <span class="blog-cat">Ocala · Estilo de vida</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>10 Abril, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">World Equestrian Center Ocala: el corazón de la capital del caballo</div>
+        <div class="blog-excerpt">Ocala es conocida como la "Horse Capital of the World" y el World Equestrian Center es su joya. Te contamos por qué este centro atrae residentes de alto poder adquisitivo y cómo impacta el mercado inmobiliario local.</div>
+        <a class="blog-read" href="blog/world-equestrian-center-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#0a2030,#061520);"></div>
+        <span class="blog-cat">Ocala · Naturaleza</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>5 Abril, 2025</span><span>· 6 min</span></div>
+        <div class="blog-title">Los Springs de Florida Central: el paraíso natural que rodea Ocala</div>
+        <div class="blog-excerpt">Silver Springs, Rainbow Springs, Juniper Springs, Alexander Springs... Ocala está rodeada de aguas cristalinas únicas en el mundo. Descubre cuáles visitar y por qué vivir cerca de ellos es un privilegio.</div>
+        <a class="blog-read" href="blog/springs-florida-central.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1e2a18,#121c0e);"></div>
+        <span class="blog-cat">Ocala · Guía</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>1 Abril, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">¿Qué hacer en Ocala, FL? La guía definitiva para recién llegados</div>
+        <div class="blog-excerpt">Desde paseos a caballo y kayak en los springs hasta los mejores restaurantes y parques de Ocala. Si acabas de mudarte o estás pensando en hacerlo, esta guía te va a encantar.</div>
+        <a class="blog-read" href="blog/que-hacer-en-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a1030,#100820);"></div>
+        <span class="blog-cat">Orlando · Guía</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>25 Marzo, 2025</span><span>· 6 min</span></div>
+        <div class="blog-title">¿Qué hacer en Orlando? Más allá de los parques temáticos</div>
+        <div class="blog-excerpt">Orlando tiene mucho más que Disney y Universal. Descubre los mejores barrios, restaurantes, lagos, mercados locales y actividades que hacen de Orlando una ciudad increíble para vivir y visitar.</div>
+        <a class="blog-read" href="blog/que-hacer-en-orlando.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a2a3a,#0e1820);"></div>
+        <span class="blog-cat">Inversión · Comparativa</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>22 Abril, 2025</span><span>· 8 min lectura</span></div>
+        <div class="blog-title">Ocala vs Lake Nona: ¿Dónde conviene más comprar en Florida Central?</div>
+        <div class="blog-excerpt">Dos mercados en pleno auge, pero con perfiles muy distintos. Ocala ofrece precios de entrada más accesibles con una plusvalía sostenida, mientras Lake Nona atrae con su innovación y desarrollo tecnológico. Comparamos precios por pie cuadrado, crecimiento proyectado, calidad de vida y oportunidades de inversión para que elijas con información real.</div>
+        <a class="blog-read" href="blog/ocala-vs-lake-nona.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#2a1a0a,#1c1008);"></div>
+        <span class="blog-cat">Ocala · Lujo</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>25 Abril, 2025</span><span>· 7 min lectura</span></div>
+        <div class="blog-title">La super mansión de John Travolta en Ocala: la propiedad más famosa de Florida Central</div>
+        <div class="blog-excerpt">¿Sabías que John Travolta vivió en Ocala en una mansión única en el mundo con su propia pista de aterrizaje para aviones comerciales en la puerta de su casa? Te contamos todo sobre esta propiedad de lujo extraordinaria y lo que dice sobre el potencial del mercado inmobiliario de Ocala para propiedades de alto valor.</div>
+        <a class="blog-read" href="blog/mansion-john-travolta-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#101a2a,#080f1a);"></div>
+        <span class="blog-cat">Ocala · Conectividad</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>26 Abril, 2025</span><span>· 6 min lectura</span></div>
+        <div class="blog-title">Aeropuertos cerca de Ocala: todo lo que necesitas saber antes de mudarte</div>
+        <div class="blog-excerpt">Vivir en Ocala no significa estar lejos del mundo. La ciudad cuenta con el Ocala International Airport (OCF) para vuelos privados y regionales, y a solo 90 minutos tienes el Orlando International Airport (MCO) — uno de los aeropuertos más grandes de EE.UU. con vuelos directos a toda América Latina, Europa y más. Te explicamos las opciones, tiempos de traslado y por qué Ocala es más conectada de lo que imaginas.</div>
+        <a class="blog-read" href="blog/aeropuertos-cerca-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#0e2018,#081510);"></div>
+        <span class="blog-cat">Ocala · Salud</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>27 Abril, 2025</span><span>· 7 min lectura</span></div>
+        <div class="blog-title">Hospitales en Ocala, FL: atención médica de primer nivel en Florida Central</div>
+        <div class="blog-excerpt">Ocala cuenta con una infraestructura médica sólida y en crecimiento. HCA Florida Ocala Hospital y AdventHealth Ocala son los principales centros de salud con servicios de emergencias, cirugía, cardiología y más. Además, el Malcom Randall VA Medical Center atiende a los veteranos de guerra de toda la región — uno de los centros del Departamento de Asuntos de Veteranos más completos de Florida. Si la salud y la calidad de atención médica son importantes para tu decisión de mudarte, Ocala no te va a decepcionar.</div>
+        <a class="blog-read" href="blog/hospitales-ocala-florida.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#2a1e10,#1a1208);"></div>
+        <span class="blog-cat">Ocala · Ecuestre</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 8 min lectura</span></div>
+        <div class="blog-title">Propiedades ecuestres en Ocala, FL: vivir en la capital del caballo del mundo</div>
+        <div class="blog-excerpt">Ocala es reconocida mundialmente como la "Horse Capital of the World" — y sus propiedades ecuestres son únicas. Desde granjas con establos, paddocks y pistas de entrenamiento hasta fincas de lujo con cientos de acres, Ocala ofrece opciones para todos los presupuestos. Te contamos qué buscar en una propiedad ecuestre, cuáles son las zonas más cotizadas como Farmland Preservation Area, Williston y Reddick, y por qué cada vez más inversores y amantes de los caballos eligen Ocala para vivir y desarrollar su pasión.</div>
+        <a class="blog-read" href="blog/propiedades-ecuestres-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a2e18,#0e1e0c);"></div>
+        <span class="blog-cat">Ocala · Zona en Crecimiento</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 6 min lectura</span></div>
+        <div class="blog-title">Winding Oaks: la nueva zona en desarrollo que está transformando Ocala</div>
+        <div class="blog-excerpt">Si estás buscando comprar antes de que los precios suban, Winding Oaks es el nombre que debes conocer ahora mismo. Esta comunidad en pleno desarrollo en Ocala está atrayendo compradores que quieren entrar temprano, asegurar su propiedad a precios de preventa y ver crecer su inversión. Casas nuevas, infraestructura moderna, espacios verdes y una ubicación estratégica dentro de Florida Central hacen de Winding Oaks una de las oportunidades más interesantes del mercado hoy. Contacta a Michelle y sé de los primeros en conocer las opciones disponibles.</div>
+        <a class="blog-read" href="blog/winding-oaks-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#2e1e0a,#1e1406);"></div>
+        <span class="blog-cat">Ocala · Caballos</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 7 min lectura</span></div>
+        <div class="blog-title">Caballos en Ocala: por qué es la capital equestre del mundo y cómo vivir esa experiencia</div>
+        <div class="blog-excerpt">Ocala, Florida es hogar de más de 70,000 caballos — más que cualquier otro condado en EE.UU. Aquí nacen, entrenan y compiten algunos de los caballos de pura sangre más valiosos del planeta. Haras legendarios como Ocala Stud, WinStar Farm y Three Chimneys tienen presencia en la región. Cada año, el World Equestrian Center atrae a jinetes y entusiastas de todo el mundo para torneos de show jumping, dressage y rodeo. Si amas los caballos o simplemente quieres vivir rodeado de naturaleza, pasturas verdes y una comunidad apasionada, Ocala es tu lugar. Te cuento todo sobre la cultura equestre que hace única a esta ciudad — y cómo encontrar la propiedad perfecta para vivirla.</div>
+        <a class="blog-read" href="blog/caballos-ocala-florida.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a1e2a,#0e1218);"></div>
+        <span class="blog-cat">Ocala · Vida Urbana</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 8 min lectura</span></div>
+        <div class="blog-title">¿Ocala es puro campo? La SR-200 te va a sorprender</div>
+        <div class="blog-excerpt">Muchos creen que Ocala es solo naturaleza y caballos — y aunque eso es parte de su encanto, la SR-200 (SW College Road) es la prueba de que Ocala tiene todo lo que necesitas para vivir cómodo y moderno. Restaurantes de todas las cocinas del mundo, dealers de autos, centros comerciales, tiendas y servicios en pleno crecimiento.</div>
+        <a class="blog-read" href="blog/sr200-ocala-no-es-puro-campo.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1e2a18,#111a0e);"></div>
+        <span class="blog-cat">Ocala · Comunidad Exclusiva</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 6 min lectura</span></div>
+        <div class="blog-title">La comunidad ecuestre de Ocala que todos quieren conocer — ¿ya la conoces?</div>
+        <div class="blog-excerpt">Hay una comunidad en Ocala que está llamando la atención de compradores de toda Florida: diseñada alrededor del estilo de vida ecuestre, con pistas de equitación, senderos para caballos, amenidades de lujo y casas nuevas en un entorno natural increíble. Si te gustan los caballos o simplemente quieres vivir en un lugar diferente, necesitas saber de esta comunidad. Contáctame y te cuento todos los detalles.</div>
+        <a class="blog-read" href="#contact">Leer artículo →</a>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#1a2030,#0e1220);"></div>
+        <span class="blog-cat">Ocala · WEC · Premios</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 7 min lectura</span></div>
+        <div class="blog-title">¿Cuánto gana un jinete compitiendo en el World Equestrian Center de Ocala?</div>
+        <div class="blog-excerpt">Los jinetes y amazones que compiten en el WEC de Ocala se disputan más de $11 millones en premios por temporada. Desde $2,500 en clases iniciales hasta $100,000 en el Grand Prix — y eso explica por qué los mejores competidores ecuestres del mundo eligen vivir en Ocala.</div>
+        <a class="blog-read" href="blog/jinete-premios-world-equestrian-center.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <div class="blog-img-bg" style="background:linear-gradient(160deg,#182818,#0e1c10);"></div>
+        <span class="blog-cat">Ocala · Resort Living</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 6 min lectura</span></div>
+        <div class="blog-title">Esta comunidad en Ocala tiene su propio restaurante — y eso es solo el comienzo</div>
+        <div class="blog-excerpt">Imagina salir a cenar sin salir de tu comunidad. Hay un lugar en Ocala que ofrece exactamente eso — un restaurante propio, amenidades de resort, senderos naturales, lago y un estilo de vida que pocas comunidades en Florida pueden igualar. ¿Quieres saber cuál es? Contacta a Michelle.</div>
+        <a class="blog-read" href="#contact">Leer artículo →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="blog-preserve" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#182818,#0e1c10);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Resort Living</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">Una comunidad en Ocala donde <em style="color:var(--gold);font-style:italic;">vivir es un privilegio diario</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Hay comunidades donde simplemente vives — y hay comunidades donde <strong style="font-weight:500;">disfrutas vivir cada día</strong>. En Ocala existe una que pertenece claramente a la segunda categoría. No voy a decirte el nombre aquí, pero sí te cuento por qué tantas familias la eligen y por qué las propiedades no duran mucho tiempo disponibles.</p>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 14px;">🍽️ Tiene su propio restaurante — dentro de la comunidad</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Sí, leíste bien. Esta comunidad cuenta con un <strong style="font-weight:500;">restaurante propio</strong> dentro de sus instalaciones. Olvídate de salir a buscar dónde comer — puedes disfrutar de una buena comida a pasos de tu casa, en un ambiente relajado que se convierte en el punto de encuentro de todos los vecinos. Es el tipo de detalle que transforma una comunidad en un verdadero estilo de vida.</p>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 14px;">✦ Un resort que llamas hogar</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:28px;">
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🏊 Piscina resort estilo vacacional</div>
+          <div style="font-size:12px;color:var(--text-muted);">Diseñada para relajarte como si estuvieras de vacaciones — todos los días</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🎾 Canchas de tenis y pickleball</div>
+          <div style="font-size:12px;color:var(--text-muted);">El deporte más popular de Florida, disponible a pasos de tu puerta</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🚣 Lago con kayaks y pesca</div>
+          <div style="font-size:12px;color:var(--text-muted);">Un lago natural dentro de la comunidad para los que aman el agua y la naturaleza</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🏋️ Fitness center moderno</div>
+          <div style="font-size:12px;color:var(--text-muted);">Gym completamente equipado — sin membresías extras, sin salir de tu comunidad</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🚶 Senderos naturales</div>
+          <div style="font-size:12px;color:var(--text-muted);">Kilómetros de senderos para caminar, correr o ir en bicicleta rodeados de naturaleza</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🏡 Clubhouse y área social</div>
+          <div style="font-size:12px;color:var(--text-muted);">Espacio comunitario elegante para eventos, reuniones y actividades con vecinos</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🐾 Dog park</div>
+          <div style="font-size:12px;color:var(--text-muted);">Área exclusiva para que tus mascotas jueguen libres y seguras</div>
+        </div>
+        <div style="background:var(--cream);padding:18px 20px;border-radius:4px;">
+          <div style="font-size:14px;font-weight:500;margin-bottom:5px;">🌿 Áreas verdes preservadas</div>
+          <div style="font-size:12px;color:var(--text-muted);">Diseño que respeta la naturaleza — árboles, plantas y espacios abiertos en toda la comunidad</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 12px;">Un estilo de vida diferente — no solo una dirección</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Lo que hace especial a esta comunidad no es solo lo que tiene — es lo que <strong style="font-weight:500;">hace sentir</strong>. Desde el primer día que entras, notas que fue diseñada para que sus residentes no necesiten salir para tener calidad de vida. Todo está pensado para que cada momento en casa sea memorable: el desayuno con vista al lago, la caminata por los senderos al atardecer, la cena en el restaurante comunitario, la partida de pickleball con los vecinos. Es Ocala en su mejor versión.</p>
+
+      <div style="background:var(--gold);border-radius:4px;padding:24px 28px;margin:28px 0;text-align:center;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark);margin-bottom:8px;">¿Quieres saber el nombre y ver las casas disponibles?</p>
+        <p style="font-size:13px;color:var(--dark-soft);margin-bottom:18px;font-weight:300;">Te doy todos los detalles — precios, planos, disponibilidad y mucho más.</p>
+        <a href="https://calendly.com/realtormichellebg" target="_blank" style="background:var(--dark);color:var(--gold);padding:13px 28px;border-radius:2px;text-decoration:none;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;display:inline-block;">Quiero conocer esta comunidad →</a>
+      </div>
+
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Cuando mis clientes la ven por primera vez, siempre dicen lo mismo: '¿Esto existe en Ocala?' Sí — y las propiedades no duran mucho tiempo disponibles."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor® · Florida Central</p>
+      </div>
+
+    </div>
+  </div> style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#1e2a18,#111a0e);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Comunidad Exclusiva</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">La comunidad de <em style="color:var(--gold);font-style:italic;">ensueño ecuestre</em> en el corazón de Ocala</div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">En Ocala existe una comunidad que está redefiniendo lo que significa vivir rodeado de la cultura del caballo — sin sacrificar ni un gramo de comodidad moderna. No voy a decirte el nombre aquí, pero sí te voy a contar por qué tanta gente me pregunta por ella.</p>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 12px;">¿Cómo es vivir ahí?</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-weight:500;font-size:16px;margin-top:2px;">✦</span>
+          <div><strong style="font-weight:500;font-size:14px;">Diseñada para jinetes y amantes del caballo</strong><div style="font-size:13px;color:var(--text-muted);margin-top:3px;">Pistas de equitación, senderos internos para caballos y acceso directo desde tu propiedad — todo pensado para quienes viven y respiran este estilo de vida.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-weight:500;font-size:16px;margin-top:2px;">✦</span>
+          <div><strong style="font-weight:500;font-size:14px;">Amenidades de primera</strong><div style="font-size:13px;color:var(--text-muted);margin-top:3px;">Piscina, clubhouse, áreas verdes, canchas y espacios recreativos que hacen de esta comunidad un resort de vida permanente.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-weight:500;font-size:16px;margin-top:2px;">✦</span>
+          <div><strong style="font-weight:500;font-size:14px;">Casas nuevas con diseño moderno</strong><div style="font-size:13px;color:var(--text-muted);margin-top:3px;">Construcción nueva con planos abiertos, acabados de calidad y la posibilidad de personalizar. Perfecta para familias que quieren estrenar.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-weight:500;font-size:16px;margin-top:2px;">✦</span>
+          <div><strong style="font-weight:500;font-size:14px;">Ubicación estratégica en Ocala</strong><div style="font-size:13px;color:var(--text-muted);margin-top:3px;">Cerca del World Equestrian Center, los springs, la SR-200 y todo lo que hace especial a Ocala — con la tranquilidad de una comunidad privada.</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-weight:500;font-size:16px;margin-top:2px;">✦</span>
+          <div><strong style="font-weight:500;font-size:14px;">Ambiente familiar y seguro</strong><div style="font-size:13px;color:var(--text-muted);margin-top:3px;">Una comunidad con vecinos que comparten la misma pasión, donde los niños crecen en contacto con la naturaleza y los caballos desde pequeños.</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--gold);border-radius:4px;padding:24px 28px;margin:28px 0;text-align:center;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark);margin-bottom:10px;">¿Quieres saber el nombre de esta comunidad y ver las propiedades disponibles?</p>
+        <p style="font-size:13px;color:var(--dark-soft);margin-bottom:18px;font-weight:300;">Contáctame directamente — te doy todos los detalles, precios y disponibilidad.</p>
+        <a href="https://calendly.com/realtormichellebg" target="_blank" style="background:var(--dark);color:var(--gold);padding:13px 28px;border-radius:2px;text-decoration:none;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;display:inline-block;">Quiero conocer esta comunidad →</a>
+      </div>
+
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Esta comunidad es uno de los secretos mejor guardados de Ocala. Cada vez que la muestro, la gente se enamora — y no es difícil entender por qué."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor® · Florida Central</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="blog-calesa" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#1e2a18,#111a0e);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Comunidad Exclusiva</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">La comunidad de <em style="color:var(--gold);font-style:italic;">ensueño ecuestre</em> en el corazón de Ocala</div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">En Ocala existe una comunidad que está redefiniendo lo que significa vivir rodeado de la cultura del caballo — sin sacrificar ni un gramo de comodidad moderna. No voy a decirte el nombre aquí, pero sí te voy a contar por qué tanta gente me pregunta por ella.</p>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Contáctame directamente para conocer todos los detalles, precios y disponibilidad de esta comunidad exclusiva.</p>
+      <div style="background:var(--gold);border-radius:4px;padding:24px 28px;margin:28px 0;text-align:center;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark);margin-bottom:10px;">¿Quieres saber el nombre de esta comunidad?</p>
+        <a href="https://calendly.com/realtormichellebg" target="_blank" style="background:var(--dark);color:var(--gold);padding:13px 28px;border-radius:2px;text-decoration:none;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;display:inline-block;">Quiero conocer esta comunidad →</a>
+      </div>
+    </div>
+  </div>
+
+        <div class="blog-excerpt">Los jinetes y amazones que compiten en el WEC de Ocala se disputan más de $11 millones en premios por temporada. Desde $2,500 en clases iniciales hasta $100,000 en el Grand Prix — y eso explica por qué los mejores competidores ecuestres del mundo eligen vivir en Ocala. Te desglosamos los premios reales y por qué esto impacta directamente el mercado inmobiliario de lujo de la ciudad.</div>
+        <a class="blog-read" href="blog/jinete-premios-world-equestrian-center.html">Leer artículo →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="blog-wec-prizes" style="display:none; max-width:860px; margin:48px auto 0; background:var(--white); border:1px solid #E8E0D0; border-radius:4px; overflow:hidden;">
+    <div style="height:260px; background:linear-gradient(160deg,#1a2030,#0e1220); position:relative; display:flex; align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · WEC · Premios</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">¿Cuánto gana un <em style="color:var(--gold);font-style:italic;">jinete</em> compitiendo en el WEC de Ocala?</div>
+    </div>
+    <div style="padding:40px 44px;">
+
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Se les llama <strong style="font-weight:500;">jinetes</strong> (o <strong style="font-weight:500;">amazones</strong> cuando son mujeres) — y los que compiten en el World Equestrian Center de Ocala no son aficionados. Son atletas de élite mundial que se ganan la vida compitiendo, y los premios en metálico son tan grandes que muchos de ellos deciden establecer su residencia permanente en Ocala.</p>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:28px 0 12px;">💰 Los números reales: más de $11 millones por temporada</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">La temporada Winter Spectacular 2025–2026 del WEC Ocala ofrece <strong style="font-weight:500;">más de $11 millones en premios totales</strong> repartidos en 12 semanas de competencia. Cada semana hay múltiples clases con premios individuales. Así se ve el desglose por nivel:</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0;">
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-weight:300;">$2,500</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Clases .90m–1.00m</div>
+        </div>
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-weight:300;">$10,000</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Clases 1.20m–1.30m</div>
+        </div>
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-weight:300;">$80,000</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Hunter Derby Internacional</div>
+        </div>
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);font-weight:300;">$100,000</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Grand Prix & Premios Trainer</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:32px 0 12px;">🏆 Competencias internacionales de élite</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">El WEC Ocala no es un evento local — es un escenario <strong style="font-weight:500;">certificado por la Federación Ecuestre Internacional (FEI)</strong>. Entre sus competencias más importantes están:</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-size:18px;margin-top:2px;">★</span>
+          <div><div style="font-size:14px;font-weight:500;margin-bottom:3px;">Longines FEI Jumping World Cup™ Ocala</div><div style="font-size:13px;color:var(--text-muted);">Calificatorio mundial de salto — uno de los eventos más prestigiosos del planeta</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-size:18px;margin-top:2px;">★</span>
+          <div><div style="font-size:14px;font-weight:500;margin-bottom:3px;">Longines League of Nations™ North America</div><div style="font-size:13px;color:var(--text-muted);">Clasificatorio de naciones — equipos de todo el mundo compiten en Ocala</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-size:18px;margin-top:2px;">★</span>
+          <div><div style="font-size:14px;font-weight:500;margin-bottom:3px;">USHJA World Championship Hunter Rider</div><div style="font-size:13px;color:var(--text-muted);">Dos semanas por temporada con $80,000 en premios cada una</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;">
+          <span style="color:var(--gold);font-size:18px;margin-top:2px;">★</span>
+          <div><div style="font-size:14px;font-weight:500;margin-bottom:3px;">WEC Premier Equitation Cup Championship</div><div style="font-size:13px;color:var(--text-muted);">El ganador se lleva un SUV nuevo + $100,000 en premios para entrenadores</div></div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:32px 0 12px;">🏠 ¿Qué tiene que ver esto con el real estate?</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">Todo. Los jinetes de élite que compiten semana tras semana en Ocala necesitan <strong style="font-weight:500;">propiedades con establos, paddocks, acceso a pistas y espacio para sus caballos</strong>. Sus entrenadores, preparadores, veterinarios y familias también se instalan en la zona. El WEC es nombrado uno de los <strong style="font-weight:500;">mejores lugares del mundo por la revista TIME (2024)</strong> — y eso atrae residentes de altísimo poder adquisitivo que elevan el valor de todo el mercado inmobiliario de Ocala.</p>
+
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;border-radius:0 4px 4px 0;margin:32px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Cuando hay más de $11 millones en premios por temporada, los mejores jinetes del mundo no solo vienen a competir — vienen a vivir. Y eso es exactamente por qué Ocala sigue creciendo."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:12px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-top:24px;">¿Te interesa una propiedad ecuestre en Ocala? Soy tu experta en este mercado. Contáctame y encontramos la finca o propiedad perfecta para ti.</p>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Agendar llamada con Michelle →</a>
+    </div>
+  </div>
+
+  </div>
+
+  <div id="blog-sr200" style="display:none; max-width:860px; margin:48px auto 0; background:var(--white); border:1px solid #E8E0D0; border-radius:4px; overflow:hidden;">
+    <div style="height:280px; background:linear-gradient(160deg,#1a1e2a,#0e1218); position:relative; display:flex; align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Vida Urbana</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--white);font-weight:300;line-height:1.2;">¿Ocala es puro campo? <em style="color:var(--gold);font-style:italic;">La SR-200 te va a sorprender</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Cuando la gente escucha "Ocala", imagina pasturas verdes, caballos y vida tranquila. Y sí — eso existe y es maravilloso. Pero hay otra Ocala que poca gente conoce hasta que llega: <strong style="font-weight:500;">la SR-200</strong>, el corredor comercial más dinámico de Florida Central.</p>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:32px 0 12px;">🛍️ Paddock Mall y Paddock Market</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">El <strong style="font-weight:500;">Paddock Mall</strong> en SW College Road es el centro comercial de referencia de Ocala, con tiendas como lululemon, Pandora, MINISO, Popeyes y más. Y ahora suma el <strong style="font-weight:500;">Paddock Market</strong> — un moderno mercado artesanal con 20 espacios de restaurantes, 78 tiendas de vendedores locales y pop-ups de artistas. Es el nuevo punto de encuentro de la ciudad.</p>
+      <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=780&q=80" alt="Centro comercial Ocala" style="width:100%;height:200px;object-fit:cover;border-radius:4px;margin-bottom:24px;">
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:32px 0 12px;">🍽️ Restaurantes para todos los gustos</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">La SR-200 tiene la mayor variedad gastronómica de Marion County. En pocos kilómetros encuentras dos churrascarias brasileñas, cocina griega, india, hibachi japonés, italiana, mexicana, BBQ americano y más. Entre los favoritos están <strong style="font-weight:500;">Texas Roadhouse, Longhorn Steakhouse, Chick-fil-A, Chipotle, Mission BBQ, Miller's Ale House, Gator's Dockside</strong> y restaurantes locales únicos como Laki's Greek y Marcelina's Italian. En 2024 abrieron más de 48 restaurantes nuevos en Ocala — y la mayoría en este corredor.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="Restaurantes en Ocala SR200" style="width:100%;height:160px;object-fit:cover;border-radius:4px;">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" alt="Gastronomía en Ocala Florida" style="width:100%;height:160px;object-fit:cover;border-radius:4px;">
+      </div>
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:32px 0 12px;">🚗 Dealers de Autos</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">La SR-200 también es el hogar de los principales concesionarios de autos de la región. Encontrarás dealers de <strong style="font-weight:500;">Toyota, Ford, Chevrolet, Honda, Hyundai, Kia, Nissan</strong> y más — todos concentrados en el corredor, haciendo de Ocala un hub automotriz para toda Florida Central.</p>
+      <img src="https://images.unsplash.com/photo-1562141961-b7b3be6c6bcd?w=780&q=80" alt="Dealers de autos Ocala Florida" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:24px;">
+
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin:32px 0 12px;">🏪 Comercios y Servicios</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">En la SR-200 encuentras <strong style="font-weight:500;">Walmart, Target, Costco, Home Depot, Lowe's, Best Buy, TJ Maxx, Ross</strong> y docenas de tiendas más. El Market Street at Heath Brook es uno de los centros de retail más activos, con nuevas aperturas constantes incluyendo Sprouts Farmers Market. Clínicas médicas, gimnasios, bancos, farmacias y salones — todo en una misma vía.</p>
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=780&q=80" alt="Comercios en Ocala Florida" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:24px;">
+
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;border-radius:0 4px 4px 0;margin:32px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"La SR-200 es la prueba de que Ocala tiene lo mejor de dos mundos: la tranquilidad del campo y la comodidad de la ciudad — todo en un mismo lugar."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:12px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-top:24px;">¿Estás pensando en mudarte a Ocala? Contáctame y te ayudo a encontrar la propiedad perfecta cerca de todo lo que necesitas.</p>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Agendar llamada con Michelle →</a>
+    </div>
+  </div>
+
+  <div class="blog-grid" style="margin-top:48px;">
+
+    <div class="blog-card featured">
+      <div class="blog-img"><div class="blog-img-bg" style="background:linear-gradient(160deg,#1e2a10,#121c08);"></div><span class="blog-cat">Ocala · Propiedades</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 7 min</span></div>
+        <div class="blog-title">En Ocala compras más casa por tu dinero — y sin las reglas de una asociación</div>
+        <div class="blog-excerpt">Patios más grandes, sin HOA que te diga qué color pintar tu casa, sin restricciones absurdas — y a precios que en Miami o Tampa serían imposibles. Ocala ofrece una libertad que pocas ciudades de Florida pueden dar hoy.</div>
+        <a class="blog-read" href="blog/mas-casa-por-tu-dinero-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img"><div class="blog-img-bg" style="background:linear-gradient(160deg,#1a280e,#101806);"></div><span class="blog-cat">Ocala · Empleo</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 6 min</span></div>
+        <div class="blog-title">¿Hay trabajo en Ocala? La economía que Forbes está mirando</div>
+        <div class="blog-excerpt">Forbes nombró a Ocala en el Top 10 de áreas metropolitanas con mayor crecimiento de empleo. Salud, manufactura, logística, construcción y la industria ecuestre lideran una economía en plena expansión. Y si trabajas remoto, aún mejor.</div>
+        <a class="blog-read" href="blog/empleo-economia-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img"><div class="blog-img-bg" style="background:linear-gradient(160deg,#0e1e2e,#081218);"></div><span class="blog-cat">Ocala · Clima</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 4 min</span></div>
+        <div class="blog-title">¿Cómo es el clima en Ocala, Florida?</div>
+        <div class="blog-excerpt">Sol casi todo el año, inviernos suaves y sin nieve — pero con algo más fresco que Miami. Ocala tiene uno de los climas más agradables de Florida para vivir. Te contamos qué esperar en cada temporada.</div>
+        <a class="blog-read" href="blog/clima-ocala-florida.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img"><div class="blog-img-bg" style="background:linear-gradient(160deg,#1e1a2e,#141018);"></div><span class="blog-cat">Ocala · Educación</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">Universidades y educación superior en Ocala y Florida Central</div>
+        <div class="blog-excerpt">College of Central Florida, University of Florida a 45 min, Santa Fe College — Ocala tiene acceso a educación universitaria de calidad sin salir de la región. Una gran ventaja para familias y jóvenes profesionales.</div>
+        <a class="blog-read" href="blog/universidades-ocala-florida-central.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img"><div class="blog-img-bg" style="background:linear-gradient(160deg,#201e10,#141208);"></div><span class="blog-cat">Ocala · Downtown</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">El downtown de Ocala y los policías a caballo: una ciudad con carácter único</div>
+        <div class="blog-excerpt">El downtown histórico de Ocala es lleno de arte, restaurantes locales y vida cultural. Y sí — la policía de Ocala tiene una unidad montada a caballo que patrulla las calles. Un detalle que dice todo sobre la identidad de esta ciudad.</div>
+        <a class="blog-read" href="blog/downtown-ocala-policia-a-caballo.html">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img"><div class="blog-img-bg" style="background:linear-gradient(160deg,#0e1a2a,#081018);"></div><span class="blog-cat">Ocala · Grandes Empresas</span></div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>28 Abril, 2025</span><span>· 5 min</span></div>
+        <div class="blog-title">Lockheed Martin y Amazon en Ocala: grandes empresas que eligen Florida Central</div>
+        <div class="blog-excerpt">No es casualidad. Lockheed Martin y Amazon tienen presencia en la región de Ocala — y eso trae empleos de alta calidad, talento profesional y crecimiento económico sostenido que beneficia directamente al mercado inmobiliario.</div>
+        <a class="blog-read" href="blog/lockheed-martin-amazon-ocala.html">Leer artículo →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="blog-mas-casa" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#1e2a10,#121c08);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Propiedades</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">En Ocala compras <em style="color:var(--gold);font-style:italic;">más casa</em> por tu dinero</div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:24px;">Una de las preguntas que más recibo es: <strong style="font-weight:500;">"¿Por qué Ocala?"</strong> Y la respuesta más inmediata es simple — en Ocala, tu dinero rinde más. Mucho más.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:28px;">
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);font-weight:300;">$280K</div><div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Casa con 3/2 en Ocala</div></div>
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);font-weight:300;">$550K+</div><div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Casa similar en Miami</div></div>
+        <div style="background:var(--cream);border-radius:4px;padding:20px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);font-weight:300;">½ acre+</div><div style="font-size:11px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em;">Patio típico en Ocala</div></div>
+      </div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 10px;">Sin HOA — más libertad para vivir como quieras</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">Muchas propiedades en Ocala no tienen Homeowners Association (HOA) — lo que significa sin cuotas mensuales extras, sin reglas sobre el color de tu puerta, sin restricciones para tener animales, boats, RVs o hacer mejoras en tu propiedad. Tu casa, tus reglas.</p>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 10px;">Más terreno, más privacidad, más vida</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:24px;">En Ocala es común encontrar propiedades de 1 a 5 acres a precios muy accesibles. Eso significa patio grande para los niños, espacio para una piscina, un taller o incluso un pequeño rancho — todo lo que en otras ciudades de Florida sería un lujo inalcanzable.</p>
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;margin:28px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"En Ocala no solo compras una casa — compras calidad de vida. Más espacio, más libertad, más por tu dinero."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Ver propiedades disponibles →</a>
+    </div>
+  </div>
+
+  <div id="blog-empleo" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#1a280e,#101806);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Empleo y Economía</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">¿Hay trabajo en Ocala? <em style="color:var(--gold);font-style:italic;">La respuesta es sí.</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Una de las preguntas que más escucho de personas que consideran mudarse a Ocala es: <strong style="font-weight:500;">"¿Pero hay trabajo allá?"</strong> Y la respuesta no solo es sí — es que Ocala está en uno de los mejores momentos económicos de su historia.</p>
+      <div style="background:var(--gold);border-radius:4px;padding:20px 24px;margin-bottom:28px;">
+        <p style="font-size:14px;font-weight:500;color:var(--dark);margin-bottom:4px;">Forbes nombró a Ocala en el</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dark);">Top 10 de áreas metropolitanas con mayor crecimiento de empleo</p>
+      </div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 14px;">Las industrias más fuertes en Ocala:</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;"><span style="font-size:20px;">🏥</span><div><strong style="font-weight:500;font-size:14px;">Salud</strong> — HCA Florida, AdventHealth y una red creciente de clínicas y especialistas</div></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;"><span style="font-size:20px;">🏭</span><div><strong style="font-weight:500;font-size:14px;">Manufactura</strong> — Ocala tiene casi el doble de empleos de manufactura que el promedio de Florida</div></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;"><span style="font-size:20px;">🚚</span><div><strong style="font-weight:500;font-size:14px;">Logística y transporte</strong> — posición estratégica en Florida Central con acceso a I-75</div></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;"><span style="font-size:20px;">🐴</span><div><strong style="font-weight:500;font-size:14px;">Industria ecuestre</strong> — veterinarios, entrenadores, farriers, preparadores y más</div></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;"><span style="font-size:20px;">🏗️</span><div><strong style="font-weight:500;font-size:14px;">Construcción</strong> — el boom de desarrollo trae miles de empleos nuevos cada año</div></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cream);border-radius:4px;"><span style="font-size:20px;">💻</span><div><strong style="font-weight:500;font-size:14px;">Trabajo remoto</strong> — costo de vida bajo + internet de alta velocidad = la combinación perfecta</div></div>
+      </div>
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;margin:28px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Ocala está creciendo tan rápido que cada vez vienen más empresas. Si ya tienes trabajo remoto, mucho mejor — vas a vivir increíble con un costo de vida que otras ciudades de Florida no pueden ofrecerte."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Hablemos de tu mudanza →</a>
+    </div>
+  </div>
+
+  <div id="blog-clima" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#0e1e2e,#081218);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Clima</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">El clima de Ocala: <em style="color:var(--gold);font-style:italic;">sol, calidez y brisa fresca</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:24px;">Ocala tiene un clima subtropical húmedo — cálido y soleado la mayor parte del año, pero con algo más de frescura que Miami o Tampa. No hay nieve, el invierno es suave y el verano es caliente pero manejable.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px;">
+        <div style="background:var(--cream);border-radius:4px;padding:18px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">☀️</div><div style="font-size:13px;font-weight:500;margin-bottom:4px;">Verano</div><div style="font-size:12px;color:var(--text-muted);">90–95°F / lluvias por la tarde</div></div>
+        <div style="background:var(--cream);border-radius:4px;padding:18px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">🍂</div><div style="font-size:13px;font-weight:500;margin-bottom:4px;">Otoño</div><div style="font-size:12px;color:var(--text-muted);">70–80°F / perfecto para salir</div></div>
+        <div style="background:var(--cream);border-radius:4px;padding:18px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">🧥</div><div style="font-size:13px;font-weight:500;margin-bottom:4px;">Invierno</div><div style="font-size:12px;color:var(--text-muted);">50–65°F / fresco sin ser frío</div></div>
+        <div style="background:var(--cream);border-radius:4px;padding:18px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">🌸</div><div style="font-size:13px;font-weight:500;margin-bottom:4px;">Primavera</div><div style="font-size:12px;color:var(--text-muted);">70–85°F / temporada ideal</div></div>
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:16px;">A diferencia del sur de Florida, Ocala está más al norte y tiene noches más frescas en invierno — lo que muchas familias prefieren. Es ideal para quienes quieren disfrutar Florida sin el calor extremo de Miami todo el año. Los springs de la región mantienen el ambiente húmedo y natural, haciendo que incluso el verano sea disfrutable cerca del agua.</p>
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;margin:28px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Lo mejor del clima de Ocala es que tienes cuatro estaciones suaves — sin nieve, sin extremos, con sol la mayor parte del año y noches frescas en invierno que te recuerdan que vivir en Florida no tiene que ser solo calor."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Conoce más sobre vivir en Ocala →</a>
+    </div>
+  </div>
+
+  <div id="blog-educacion" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#1e1a2e,#141018);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Educación Superior</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">Universidades en Ocala y <em style="color:var(--gold);font-style:italic;">Florida Central</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:24px;">Vivir en Ocala no significa sacrificar el acceso a educación universitaria de calidad. Tanto si tienes hijos en edad universitaria como si quieres estudiar tú mismo, la región ofrece opciones sólidas.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="padding:18px 20px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);">
+          <div style="font-size:15px;font-weight:500;margin-bottom:4px;">College of Central Florida (CF)</div>
+          <div style="font-size:13px;color:var(--text-muted);">En pleno Ocala — universidad estatal con programas de associate y bachelor degrees. Accesible y con excelente reputación local.</div>
+        </div>
+        <div style="padding:18px 20px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);">
+          <div style="font-size:15px;font-weight:500;margin-bottom:4px;">University of Florida (UF) — Gainesville</div>
+          <div style="font-size:13px;color:var(--text-muted);">A solo 45 minutos de Ocala. Una de las mejores universidades públicas de EE.UU., con rankings de primer nivel en medicina, derecho, ingeniería y más.</div>
+        </div>
+        <div style="padding:18px 20px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);">
+          <div style="font-size:15px;font-weight:500;margin-bottom:4px;">Santa Fe College — Gainesville</div>
+          <div style="font-size:13px;color:var(--text-muted);">Reconocida como una de las mejores community colleges de todo EE.UU. — programas técnicos, de salud y transferencia a UF.</div>
+        </div>
+        <div style="padding:18px 20px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);">
+          <div style="font-size:15px;font-weight:500;margin-bottom:4px;">Rasmussen University y opciones online</div>
+          <div style="font-size:13px;color:var(--text-muted);">Campus presencial en Ocala con programas en salud, negocios y tecnología — ideal para adultos que trabajan y estudian.</div>
+        </div>
+      </div>
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;margin:28px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Vivir a 45 minutos de la University of Florida y tener el College of Central Florida en tu ciudad es una ventaja enorme para familias con hijos que están pensando en el futuro."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Encuentra tu hogar cerca del campus →</a>
+    </div>
+  </div>
+
+  <div id="blog-downtown" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#201e10,#141208);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Downtown</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">El downtown de Ocala y los <em style="color:var(--gold);font-style:italic;">policías a caballo</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Ocala tiene un downtown que sorprende a quien lo visita por primera vez. Arquitectura histórica, murales de arte, plazas con eventos y una escena gastronómica y cultural que está creciendo rápidamente.</p>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:20px 0 12px;">¿Policías a caballo? Sí, en serio.</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">La policía de Ocala cuenta con una <strong style="font-weight:500;">unidad montada a caballo</strong> que patrulla el downtown y eventos de la ciudad. No es solo un símbolo — es un reflejo de la identidad ecuestre de Ocala que la hace completamente única en Florida. Ver a un oficial de policía a caballo recorriendo las calles del downtown es algo que no verás en ninguna otra ciudad del estado.</p>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:20px 0 12px;">Qué encontrar en el downtown de Ocala:</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:24px;">
+        <div style="background:var(--cream);padding:16px;border-radius:4px;font-size:13px;color:var(--text-muted);">🍷 Restaurantes y wine bars locales</div>
+        <div style="background:var(--cream);padding:16px;border-radius:4px;font-size:13px;color:var(--text-muted);">🎨 Galerías de arte y murales</div>
+        <div style="background:var(--cream);padding:16px;border-radius:4px;font-size:13px;color:var(--text-muted);">🎭 Ocala Civic Theatre</div>
+        <div style="background:var(--cream);padding:16px;border-radius:4px;font-size:13px;color:var(--text-muted);">🌳 Tuscawilla Park y el Appleton Museum</div>
+        <div style="background:var(--cream);padding:16px;border-radius:4px;font-size:13px;color:var(--text-muted);">🎶 Eventos y festivales al aire libre</div>
+        <div style="background:var(--cream);padding:16px;border-radius:4px;font-size:13px;color:var(--text-muted);">☕ Cafés y mercados artesanales</div>
+      </div>
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;margin:24px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Ocala no es solo campo. Tiene un downtown con alma, con historia y con una identidad que ninguna otra ciudad de Florida puede copiar — incluyendo sus policías a caballo."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Quiero vivir cerca del downtown →</a>
+    </div>
+  </div>
+
+  <div id="blog-empresas" style="display:none;max-width:860px;margin:48px auto 0;background:var(--white);border:1px solid #E8E0D0;border-radius:4px;overflow:hidden;">
+    <div style="height:220px;background:linear-gradient(160deg,#0e1a2a,#081018);position:relative;display:flex;align-items:flex-end;">
+      <span style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500;">Ocala · Grandes Empresas</span>
+      <div style="padding:24px 32px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--white);font-weight:300;line-height:1.2;">Lockheed Martin y Amazon <em style="color:var(--gold);font-style:italic;">eligen Ocala</em></div>
+    </div>
+    <div style="padding:40px 44px;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:24px;">Cuando empresas del calibre de <strong style="font-weight:500;">Lockheed Martin</strong> y <strong style="font-weight:500;">Amazon</strong> deciden instalar operaciones en una región, no es casualidad — es una señal clara de que esa área tiene el potencial, la infraestructura y la fuerza laboral para sostener un crecimiento serio.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px;">
+        <div style="padding:22px 24px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);">
+          <div style="font-size:16px;font-weight:500;margin-bottom:8px;">🚀 Lockheed Martin</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.8;">Una de las empresas de defensa y aeroespacial más grandes del mundo tiene presencia en la región de Florida Central. Su llegada trae empleos de alta tecnología, ingenieros y profesionales bien remunerados que necesitan vivienda — lo que beneficia directamente el mercado inmobiliario de Ocala.</div>
+        </div>
+        <div style="padding:22px 24px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold);">
+          <div style="font-size:16px;font-weight:500;margin-bottom:8px;">📦 Amazon</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.8;">Amazon ha expandido su red de fulfillment y logística en Florida Central, aprovechando la posición estratégica de Ocala en la intersección de las principales rutas de transporte del estado. Miles de empleos directos e indirectos que dinamizan la economía local.</div>
+        </div>
+      </div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:24px 0 12px;">¿Por qué esto importa para el real estate?</h3>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.9;font-weight:300;margin-bottom:20px;">Cuando grandes empresas llegan, traen empleados que necesitan vivienda. Eso aumenta la demanda de propiedades, sostiene los precios y genera plusvalía. Si compras hoy en Ocala, estás entrando en un mercado que ya tiene el respaldo económico para seguir creciendo durante años.</p>
+      <div style="background:var(--cream);border-left:3px solid var(--gold);padding:22px 26px;border-radius:0 4px 4px 0;margin:24px 0;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--text);line-height:1.6;margin:0;">"Cuando Lockheed Martin y Amazon eligen una región, los inversionistas inteligentes también la eligen. Ocala no es el futuro — ya está pasando ahora."</p>
+        <p style="font-size:13px;color:var(--gold-dark);margin-top:10px;font-weight:500;">— Michelle Barrios, Realtor · Florida Central</p>
+      </div>
+      <a href="https://calendly.com/realtormichellebg" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Invertir en Ocala ahora →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* DE CERO A CASA SECTION */
+  .dcac-hero { padding: 100px 6vw 80px; background: var(--dark); text-align: center; position: relative; overflow: hidden; }
+  .dcac-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 60%, rgba(201,169,110,0.08) 0%, transparent 70%); pointer-events: none; }
+  .dcac-pattern { position: absolute; inset: 0; opacity: 0.03; background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%); background-size: 24px 24px; pointer-events: none; }
+  .dcac-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.3); border-radius: 30px; padding: 7px 18px; margin-bottom: 28px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .dcac-badge::before { content: '✦'; font-size: 10px; }
+  .dcac-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 7vw, 84px); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 16px; }
+  .dcac-title em { color: var(--gold); font-style: italic; }
+  .dcac-title .tm { font-size: 0.4em; vertical-align: super; color: var(--gold); }
+  .dcac-sub { font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 620px; margin: 0 auto 16px; font-weight: 300; }
+  .dcac-promise { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(16px, 2vw, 21px); color: var(--gold-light); margin-bottom: 36px; max-width: 640px; line-height: 1.6; }
+  .btn-gold-dcac { display: inline-block; background: var(--gold); color: var(--dark); padding: 16px 40px; border-radius: 2px; text-decoration: none; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 24px rgba(201,169,110,0.3); }
+  .btn-gold-dcac:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .dcac-note { font-size: 12px; color: rgba(255,255,255,0.28); margin-top: 14px; }
+  .dcac-proof { background: var(--gold); padding: 16px 6vw; display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap; }
+  .dcac-proof-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--dark); }
+  .dcac-problem { padding: var(--section-pad); background: var(--cream); }
+  .dcac-problem-intro { font-size: 16px; color: var(--text-muted); line-height: 1.85; margin-bottom: 36px; font-weight: 300; max-width: 660px; }
+  .dcac-pain-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .dcac-pain { background: var(--white); border-left: 3px solid #E8392A; padding: 18px 22px; border-radius: 0 4px 4px 0; display: flex; align-items: flex-start; gap: 12px; }
+  .dcac-pain-emoji { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .dcac-pain-text { font-size: 14px; color: var(--text); line-height: 1.7; }
+  .dcac-pain-text strong { font-weight: 500; display: block; margin-bottom: 3px; }
+  .dcac-problem-close { margin-top: 36px; font-family: 'Cormorant Garamond', serif; font-size: clamp(17px, 2.2vw, 24px); font-style: italic; color: var(--text); line-height: 1.6; max-width: 680px; }
+  .dcac-problem-close span { color: var(--gold-dark); }
+  .dcac-solution { padding: var(--section-pad); background: var(--dark); display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .dcac-sol-card { background: rgba(201,169,110,0.06); border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; padding: 36px; }
+  .dcac-sol-card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 20px; font-weight: 400; }
+  .dcac-sol-points { display: flex; flex-direction: column; gap: 12px; }
+  .dcac-sol-point { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+  .dcac-sol-point::before { content: '✓'; color: var(--gold); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+  .dcac-sol-sig { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-style: italic; color: var(--gold); margin-top: 24px; }
+  .dcac-steps { padding: var(--section-pad); background: var(--white); }
+  .dcac-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; margin-top: 52px; }
+  .dcac-step { background: var(--cream); padding: 36px 28px; border: 1px solid #EDE6D6; }
+  .dcac-step-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; color: rgba(201,169,110,0.15); font-weight: 300; line-height: 1; margin-bottom: 12px; }
+  .dcac-step-icon { font-size: 26px; margin-bottom: 12px; }
+  .dcac-step-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+  .dcac-step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+  .dcac-bonus { padding: var(--section-pad); background: var(--dark); }
+  .dcac-bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 48px; }
+  .dcac-bonus-card { background: rgba(201,169,110,0.05); border: 1px solid rgba(201,169,110,0.15); border-radius: 4px; padding: 28px 24px; }
+  .dcac-bonus-icon { font-size: 28px; margin-bottom: 12px; }
+  .dcac-bonus-tag { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .dcac-bonus-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--white); font-weight: 400; margin-bottom: 8px; }
+  .dcac-bonus-desc { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.8; }
+  .dcac-guarantee { padding: 72px 6vw; background: var(--gold); text-align: center; }
+  .dcac-guarantee-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.5vw, 44px); font-weight: 300; color: var(--dark); margin-bottom: 14px; }
+  .dcac-guarantee-text { font-size: 15px; color: rgba(28,27,24,0.7); max-width: 580px; margin: 0 auto; line-height: 1.85; font-weight: 300; }
+  .dcac-urgency { padding: var(--section-pad); background: var(--cream); }
+  .dcac-urgency-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+  .dcac-urgency-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #E8392A; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .dcac-urgency-label::before, .dcac-urgency-label::after { content: ''; display: block; width: 18px; height: 1px; background: #E8392A; }
+  .dcac-not-for { background: var(--white); border: 1px solid #EDE6D6; border-radius: 4px; padding: 24px 28px; margin: 24px 0; text-align: left; }
+  .dcac-not-title { font-size: 13px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+  .dcac-not-item { font-size: 14px; color: var(--text-muted); display: flex; gap: 10px; align-items: flex-start; margin-bottom: 7px; }
+  .dcac-not-item::before { content: '✗'; color: #E8392A; font-weight: 600; flex-shrink: 0; }
+  .dcac-for { background: var(--white); border: 1px solid rgba(45,106,79,0.3); border-radius: 4px; padding: 24px 28px; margin: 14px 0; text-align: left; }
+  .dcac-for-title { font-size: 13px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #2D6A4F; }
+  .dcac-for-item { font-size: 14px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; margin-bottom: 7px; }
+  .dcac-for-item::before { content: '✓'; color: #2D6A4F; font-weight: 600; flex-shrink: 0; }
+  .dcac-cta-final { padding: 90px 6vw; background: var(--dark-soft); text-align: center; }
+  .dcac-cta-box { background: rgba(201,169,110,0.07); border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; padding: 36px; max-width: 580px; margin: 0 auto 36px; text-align: left; }
+  .dcac-cta-box-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--white); margin-bottom: 18px; font-weight: 400; }
+  .dcac-cta-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 9px; }
+  .dcac-cta-item::before { content: '✦'; color: var(--gold); flex-shrink: 0; font-size: 10px; margin-top: 3px; }
+  .dcac-disclaimer { font-size: 12px; color: rgba(255,255,255,0.22); margin-top: 18px; line-height: 1.6; }
+  @media (max-width: 768px) {
+    .dcac-solution { grid-template-columns: 1fr; gap: 40px; }
+    .dcac-proof { gap: 16px; }
+  }
+</style>
+
+<!-- DE CERO A CASA -->
+<section id="de-cero-a-casa">
+
+  <!-- HERO DCAC -->
+  <div class="dcac-hero">
+    <div class="dcac-pattern"></div>
+    <div class="dcac-badge">Programa exclusivo para familias latinas en Florida</div>
+    <h2 class="dcac-title">De Cero a Casa<span class="tm">™</span><br>en <em>Florida</em></h2>
+    <p class="dcac-sub">El método paso a paso para comprar tu primera casa o invertir en Florida — sin perder dinero, sin confusión, sin importar si tu crédito no es perfecto.</p>
+    <p class="dcac-promise">"Ayudo a personas a comprar su casa o invertir en Florida sin perder dinero, incluso si su crédito no es perfecto."</p>
+    <a class="btn-gold-dcac" href="https://calendly.com/realtormichellebg" target="_blank">📅 Agenda tu llamada gratuita ahora</a>
+    <p class="dcac-note">100% gratuita · Sin compromisos · Solo 30 minutos</p>
+  </div>
+
+  <!-- PROOF BAR -->
+  <div class="dcac-proof">
+    <div class="dcac-proof-item">🏡 Familias que compraron su primera casa</div>
+    <div class="dcac-proof-item">⭐ Realtor® registrada en la NAR</div>
+    <div class="dcac-proof-item">🎓 Licenciada en Marketing</div>
+    <div class="dcac-proof-item">📍 Especialista en Florida Central</div>
+  </div>
+
+  <!-- PROBLEM -->
+  <div class="dcac-problem">
+    <div class="section-label">¿Te identificas?</div>
+    <h3 class="section-title">Sé exactamente <em>cómo te sientes</em></h3>
+    <p class="dcac-problem-intro">Comprar una casa en Florida parece complicado, caro y confuso. Y muchas personas se quedan esperando "el momento perfecto" — que nunca llega. ¿Alguna de estas frases te suena familiar?</p>
+    <div class="dcac-pain-list">
+      <div class="dcac-pain"><span class="dcac-pain-emoji">😰</span><div class="dcac-pain-text"><strong>"No sé si califico"</strong>Crees que tu crédito, tus ingresos o tu situación migratoria te impiden comprar — pero nadie te ha explicado exactamente qué necesitas.</div></div>
+      <div class="dcac-pain"><span class="dcac-pain-emoji">💸</span><div class="dcac-pain-text"><strong>"No tengo suficiente para el down payment"</strong>Piensas que necesitas el 20% del valor de la casa ahorrado — y eso se siente imposible.</div></div>
+      <div class="dcac-pain"><span class="dcac-pain-emoji">😵</span><div class="dcac-pain-text"><strong>"No entiendo el proceso"</strong>Inspección, closing costs, mortgage, pre-aprobación... tantos términos y nadie te los explica en palabras simples.</div></div>
+      <div class="dcac-pain"><span class="dcac-pain-emoji">⏳</span><div class="dcac-pain-text"><strong>"Pensé que lo lograría en 3 años"</strong>Llevas tiempo ahorrando y esperando, pero la meta siempre parece que se mueve más lejos.</div></div>
+      <div class="dcac-pain"><span class="dcac-pain-emoji">🤝</span><div class="dcac-pain-text"><strong>"No confío en los agentes"</strong>Sientes que solo quieren su comisión y no les importa realmente ayudarte a tomar la mejor decisión.</div></div>
+      <div class="dcac-pain"><span class="dcac-pain-emoji">😟</span><div class="dcac-pain-text"><strong>"Me da miedo cometer un error"</strong>Una casa es la compra más grande de tu vida — y el miedo a equivocarte te paraliza completamente.</div></div>
+    </div>
+    <p class="dcac-problem-close">Si dijiste "sí" a alguna de estas, <span>estás en el lugar correcto.</span> Eso es exactamente lo que resolvemos juntos.</p>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="dcac-solution">
+    <div>
+      <div class="section-label" style="color:var(--gold);">La solución</div>
+      <h3 class="section-title" style="color:var(--white);">No necesitas <em>saberlo todo</em> — necesitas a alguien que te guíe</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.9;font-weight:300;margin-bottom:14px;">Mi trabajo no es solo encontrarte una casa. Es acompañarte desde el primer día, explicarte cada paso en palabras simples, conectarte con el equipo correcto y asegurarme de que tomes la mejor decisión para tu familia — no para mi comisión.</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.9;font-weight:300;">He ayudado a familias que creían que comprar era imposible. Personas que llegaron sin crédito, sin mucho ahorrado, sin saber nada del proceso — y hoy tienen las llaves de su hogar en Florida.</p>
+      <div class="dcac-sol-sig">Michelle Barrios</div>
+    </div>
+    <div class="dcac-sol-card">
+      <div class="dcac-sol-card-title">Con mi método "De Cero a Casa™" vas a:</div>
+      <div class="dcac-sol-points">
+        <div class="dcac-sol-point">Saber exactamente si calificas — sin suposiciones ni confusión</div>
+        <div class="dcac-sol-point">Entender cuánto dinero necesitas realmente (puede ser menos de lo que crees)</div>
+        <div class="dcac-sol-point">Conocer todas las ayudas disponibles para primeros compradores en Florida</div>
+        <div class="dcac-sol-point">Tener un equipo completo (crédito, taxes, mortgage, inspección) que trabaja para ti</div>
+        <div class="dcac-sol-point">Cerrar tu casa con confianza — sin sorpresas, sin errores, sin arrepentimientos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 STEPS -->
+  <div class="dcac-steps">
+    <div style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">El proceso</div>
+      <h3 class="section-title" style="text-align:center;">4 pasos para ir de <em>Cero a Casa™</em></h3>
+      <p style="font-size:14px;color:var(--text-muted);max-width:520px;margin:0 auto;line-height:1.8;font-weight:300;">Un camino claro, sin sorpresas. Cada paso tiene un propósito — y yo te acompaño en todos.</p>
+    </div>
+    <div class="dcac-steps-grid">
+      <div class="dcac-step"><div class="dcac-step-num">01</div><div class="dcac-step-icon">🔍</div><div class="dcac-step-title">Diagnóstico</div><div class="dcac-step-desc">Revisamos juntos tu situación real: crédito, ingresos, ahorros y metas. Sin juicios, solo soluciones. Aquí descubres exactamente desde dónde partes.</div></div>
+      <div class="dcac-step"><div class="dcac-step-num">02</div><div class="dcac-step-icon">🗺️</div><div class="dcac-step-title">Plan Personalizado</div><div class="dcac-step-desc">Con el diagnóstico en mano, creamos tu plan a medida: qué mejorar, qué ahorrar, qué programas de ayuda aplican para ti y cuánto tiempo tomará.</div></div>
+      <div class="dcac-step"><div class="dcac-step-num">03</div><div class="dcac-step-icon">🎯</div><div class="dcac-step-title">Estrategia de Compra</div><div class="dcac-step-desc">Buscamos la propiedad correcta para tu presupuesto y tus metas, negociamos el mejor precio y te protegemos en cada decisión del proceso.</div></div>
+      <div class="dcac-step"><div class="dcac-step-num">04</div><div class="dcac-step-icon">🔑</div><div class="dcac-step-title">Cierre Exitoso</div><div class="dcac-step-desc">Llegamos al closing con todo listo. Sin sorpresas de última hora. Solo tú, las llaves de tu casa y la tranquilidad de haber tomado la mejor decisión.</div></div>
+    </div>
+  </div>
+
+  <!-- BONUS -->
+  <div class="dcac-bonus">
+    <div style="text-align:center;">
+      <div class="section-label" style="justify-content:center;color:var(--gold);">Incluido gratis</div>
+      <h3 class="section-title" style="color:var(--white);text-align:center;">Todo lo que obtienes <em style="color:var(--gold);font-style:italic;">sin costo adicional</em></h3>
+      <p style="font-size:14px;color:rgba(255,255,255,0.38);max-width:480px;margin:0 auto;line-height:1.8;font-weight:300;">Cuando agendas tu llamada gratuita conmigo, esto es tuyo:</p>
+    </div>
+    <div class="dcac-bonus-grid">
+      <div class="dcac-bonus-card"><div class="dcac-bonus-icon">📅</div><div class="dcac-bonus-tag">Bonus #1</div><div class="dcac-bonus-title">Agenda de Planificación</div><div class="dcac-bonus-desc">Un plan claro con fechas, metas y pasos para que sepas exactamente qué hacer cada mes hasta llegar a tu casa.</div></div>
+      <div class="dcac-bonus-card"><div class="dcac-bonus-icon">📋</div><div class="dcac-bonus-tag">Bonus #2</div><div class="dcac-bonus-title">Guía para Calificar</div><div class="dcac-bonus-desc">Te explico exactamente qué necesitas en crédito, ingresos y documentos para calificar para un mortgage en Florida hoy.</div></div>
+      <div class="dcac-bonus-card"><div class="dcac-bonus-icon">💰</div><div class="dcac-bonus-tag">Bonus #3</div><div class="dcac-bonus-title">Lista de Ayudas Disponibles</div><div class="dcac-bonus-desc">Programas de asistencia, down payment grants y beneficios para primeros compradores en Florida que poca gente conoce.</div></div>
+      <div class="dcac-bonus-card"><div class="dcac-bonus-icon">🛡️</div><div class="dcac-bonus-tag">Bonus #4</div><div class="dcac-bonus-title">Guía para Evitar Errores</div><div class="dcac-bonus-desc">Los 7 errores más comunes que cometen los primeros compradores — y cómo evitarlos para no perder tiempo ni dinero.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a class="btn-gold-dcac" href="https://calendly.com/realtormichellebg" target="_blank">📅 Quiero mis bonos — agendar llamada gratis</a>
+      <p style="font-size:12px;color:rgba(255,255,255,0.22);margin-top:12px;">100% gratuito · Sin letra pequeña · Sin presión</p>
+    </div>
+  </div>
+
+  <!-- GUARANTEE -->
+  <div class="dcac-guarantee">
+    <div style="font-size:44px;margin-bottom:14px;">🛡️</div>
+    <h3 class="dcac-guarantee-title">"Tu inversión es cuidada como si fuera mía."</h3>
+    <p class="dcac-guarantee-text">Me comprometo a darte información honesta, opciones reales y a defender tus intereses en cada paso del proceso. No gano si tú no ganas. Mi reputación depende de tu éxito — y eso es garantía suficiente.</p>
+  </div>
+
+  <!-- URGENCY -->
+  <div class="dcac-urgency">
+    <div class="dcac-urgency-inner">
+      <div class="dcac-urgency-label">Importante</div>
+      <h3 class="section-title" style="text-align:center;">Esto no es para <em>todo el mundo</em></h3>
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.85;margin-bottom:16px;font-weight:300;">Solo trabajo con personas comprometidas con el proceso — que quieren información real y están listas para tomar acción cuando llegue el momento correcto.</p>
+      <div class="dcac-not-for">
+        <div class="dcac-not-title">Esto NO es para ti si...</div>
+        <div class="dcac-not-item">No estás dispuesto a seguir un proceso claro</div>
+        <div class="dcac-not-item">Quieres resultados instantáneos sin esfuerzo</div>
+        <div class="dcac-not-item">No tienes intención real de comprar en los próximos 6 a 24 meses</div>
+      </div>
+      <div class="dcac-for">
+        <div class="dcac-for-title">Esto SÍ es para ti si...</div>
+        <div class="dcac-for-item">Eres empleado o tienes tu propio negocio y quieres tu primera casa</div>
+        <div class="dcac-for-item">Tu crédito no es perfecto pero estás dispuesto a trabajar en él</div>
+        <div class="dcac-for-item">Quieres entender el proceso de verdad, sin confusión</div>
+        <div class="dcac-for-item">Estás cansado de pagar renta y quieres construir patrimonio</div>
+        <div class="dcac-for-item">Necesitas a alguien de confianza que hable tu idioma y entienda tu historia</div>
+      </div>
+      <p style="font-size:15px;color:var(--text-muted);margin-top:20px;font-weight:300;">Solo tengo disponibilidad limitada para llamadas gratuitas cada semana. Si estás listo — este es tu momento.</p>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="dcac-cta-final">
+    <div class="section-label" style="justify-content:center;color:var(--gold);">Último paso</div>
+    <h3 class="section-title" style="color:var(--white);text-align:center;">Tu casa en Florida empieza<br>con <em>una llamada</em></h3>
+    <p style="font-size:15px;color:rgba(255,255,255,0.45);max-width:520px;margin:0 auto 36px;line-height:1.8;font-weight:300;text-align:center;">Una conversación de 30 minutos puede cambiar completamente lo que creías posible. Sin presión, sin compromiso — solo información real y un plan claro.</p>
+    <div class="dcac-cta-box">
+      <div class="dcac-cta-box-title">En tu llamada gratuita vamos a:</div>
+      <div class="dcac-cta-item">Revisar tu situación actual y ver si calificas</div>
+      <div class="dcac-cta-item">Explicarte cuánto dinero necesitas realmente</div>
+      <div class="dcac-cta-item">Mostrarte las ayudas disponibles para ti en Florida</div>
+      <div class="dcac-cta-item">Darte un plan claro con los próximos pasos</div>
+      <div class="dcac-cta-item">Responder todas tus preguntas sin letra pequeña</div>
+    </div>
+    <a class="btn-gold-dcac" href="https://calendly.com/realtormichellebg" target="_blank">📅 Agenda tu llamada gratuita ahora →</a>
+    <p class="dcac-disclaimer">Llamada 100% gratuita · Sin compromisos · Solo 30 minutos<br>Disponibilidad limitada — agenda hoy tu espacio</p>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-logo">Michelle Barrios</div>
+  <div class="footer-socials">
+    <a class="footer-social" href="https://instagram.com/realtormichelleb" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a class="footer-social" href="https://facebook.com/realtormichelleb" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a class="footer-social" href="https://tiktok.com/@realtormichelleb" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+    </a>
+    <a class="footer-social" href="https://wa.me/17272265975" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2025 michellebarriosrealtor.com · Realtor® Miembro NAR · Florida Licensed</div>
+  <div class="footer-links">
+    <a href="#home">Inicio</a>
+    <a href="#properties">Propiedades</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contacto</a>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(q => {
+    q.classList.remove('open');
+    q.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+function fmt(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+function mc(){
+  const p=+document.getElementById('rp').value;
+  const dp=+document.getElementById('rd').value;
+  const ra=+document.getElementById('rr').value;
+  const tm=+document.getElementById('rt').value;
+  const tx=+document.getElementById('rtx').value;
+  const ins=+document.getElementById('ri').value;
+  document.getElementById('cp').textContent=fmt(p);
+  document.getElementById('cd').textContent=dp+'%';
+  document.getElementById('cr').textContent=ra.toFixed(1)+'%';
+  document.getElementById('ct').textContent=tm+' años';
+  document.getElementById('ctx').textContent=fmt(tx);
+  document.getElementById('ci').textContent=fmt(ins);
+  const loan=p*(1-dp/100);
+  const r=ra/100/12;
+  const n=tm*12;
+  const pi=r===0?loan/n:loan*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  const txm=tx/12; const im=ins/12;
+  const tot=pi+txm+im;
+  const tint=pi*n-loan;
+  document.getElementById('o-total').textContent=fmt(tot);
+  document.getElementById('o-pi').textContent=fmt(pi);
+  document.getElementById('o-loan').textContent=fmt(loan);
+  document.getElementById('d-pi').textContent=fmt(pi)+'/mes';
+  document.getElementById('d-tax').textContent=fmt(txm)+'/mes';
+  document.getElementById('d-ins').textContent=fmt(im)+'/mes';
+  document.getElementById('d-total').textContent=fmt(tot)+'/mes';
+  const pp=(pi/2/tot*100).toFixed(1);
+  const ip=(pi/2/tot*100).toFixed(1);
+  const tp=((txm+im)/tot*100).toFixed(1);
+  document.getElementById('barp').style.width=pp+'%';
+  document.getElementById('bari').style.width=ip+'%';
+  document.getElementById('bart').style.width=tp+'%';
+}
+mc();
+</script>
+<a class="cal-float" href="https://calendly.com/realtormichellebg" target="_blank">
+  <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+  Agendar llamada
+</a>
+
+</body>
+</html>
